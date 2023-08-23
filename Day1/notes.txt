@@ -167,6 +167,27 @@ switch...case : Used to define menu-driven programs.
 
 (ii) Looping 
 
+while loop : This loop executes all the statement(s) repeatedly until the condition remains true, if the condition remains false, then it comes out of the loop. 
+
+For every loop, we have 3 phases as 
+
+	(i) Initilization
+
+	(ii) Condition
+
+	(iii) Increment/Decrement 
+
+Initilization performed at the beginning of the loop.
+
+Condition performed at the conditional part of the loop.
+
+Increment/Decrement performed before closing the loop. 
+
+while(condition) {
+   statement(s);
+}
+
+
 
 
 
