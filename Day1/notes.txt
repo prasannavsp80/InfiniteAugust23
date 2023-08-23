@@ -187,6 +187,142 @@ while(condition) {
    statement(s);
 }
 
+for loop : This loop executes all the statements repeatdly until the condition remains true.
+
+for(initialization;condition;increment/decrement) {
+...
+...
+...
+}
+
+Arrays : An array is the finite ordered set of homogeneous elements, means all the elements belongs to same data type. 
+
+All the elements of array are stored in successive memory locations. 
+
+int[] a = new int[]{12,5,33,23,66};
+
+a[0]=12;
+a[1]=5;
+a[2]=33;
+a[3]=23;
+a[4]=66;
+
+How internally foreach loop will work ???
+int[] a = new int[] {12,4,33,653,23};
+//		for(int i=0;i<a.length;i++) {
+//			System.out.println(a[i]);
+//		}
+		for (int i : a) {
+			System.out.println(i);
+		}
+
+In this above loop, at first i points to the first element in array A, after processing first element, it checks next element is there or not by using hasMoreElements(), it hasMoreElements() returns true, it moves to the next element by using nextElement(). It repeats as soon as hasMoreElements() is true. 
+
+public class Quiz1 {
+   public static void main(String[] args) {
+	System.out.println("5"+3+8);
+	System.out.println("5"+(3+8));
+	System.out.println("5+3"+8);
+  }
+}
+
+public class Quiz2 {
+   public static void main(String[] args) {
+	int x;
+	System.out.println(x);
+   }
+}
+
+public class Quiz3 {
+   public static void main(String[] args) {
+	int x=10;
+	int y=x++;
+	System.out.println(x + " " +y);
+   }
+}
+
+public class Quiz4 {
+   public static void main(String[] args) {
+	int x=10;
+	int y=x++ + x++ + ++x + ++x;
+            // 10 + 11 + 13 + 14
+	System.out.println(x + " " +y);
+   }
+}
+
+public class Quiz5 {
+   boolean climate;
+   public static void main(String[] args) {
+	System.out.println(new Quiz5().climate);
+   }
+}
+
+
+public class Quiz6 {
+   public static void main(String[] args) {
+	int ch='A';
+	System.out.println(ch);
+   }
+}
+
+public class Quiz7 {
+   public static void main(String[] args) {
+	System.out.println(args[0] + " " + args[2]);
+   }
+}
+
+java Quiz7 Ayush Rahul Khafia Jitendra
+
+public class Quiz8 {
+    public static void main(String[] args) {
+	byte b=125;
+	b+=10;	
+	System.out.println(b);
+   }
+}
+
+public class Quiz9 {
+    public static void main(String[] args) {
+	String s1="Hello";
+	s1.concat(" World");
+	System.out.println(s1);
+   }
+}
+
+
+Task 1: 
+
+Write a Program to implement current bill as read no.of units and generate bill based on slabs given below
+
+	first 90 units 1 rs per unit
+	91 to 150 units 1.5 rs per unit
+	151 to 200 units 2 rs per unit
+	200 to 240 units 2.5 rs per unit
+	240+ units 3 rs per unit 
+
+Case 1 : If units are 95 then bill is (90 * 1 ) + (5 * 1.5)
+Case 2 : If units are 155 then bill is (90 * 1) + (60 * 1.5) + (5 * 2) 
+Case 3 : If units are 205 then bili is (90 * 1) + (60 * 1.5) + (50 * 2) + (5 *2.5)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
