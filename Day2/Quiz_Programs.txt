@@ -1,0 +1,115 @@
+public class First {
+   public void show() {
+      System.out.println("Show from First...");
+   }
+}
+
+public class Second extends First {
+   public void show() {
+     System.out.println("Show Method from Class Second...");
+   }
+}
+
+public class Main {
+    public static void main(String[] args) {
+         First fb = (First) new Second();
+	 fb.show();
+    }
+}
+
+__________________________________________________________
+
+public class First {
+    public int sum(int x) {
+	return x+5;
+    }
+}
+
+public class Second extends First {
+    public void sum(int x) {
+	System.out.println("Hello " +x);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+	new Second().sum(12);
+    }
+}
+
+______________________________________________________________
+
+public class First {
+    private First() {
+	System.out.println("Base Class Constructor...");
+    }
+}
+
+public class Second extends First {
+     public Second() {
+	System.out.println("Derived Class Constructor...");
+     }
+}
+
+public class Main {
+     public static void main(String[] args) {
+	new Second();
+     }
+}
+
+__________________________________________________________
+
+public class First {
+     int id;
+     String name;
+     First() {
+	id=1;
+        name="Prasanna";
+     }
+	public String toString() {
+		return "Id " +id + " Name " + name;
+	}
+}
+
+public class Second extends First {
+	Second() {
+	}
+}
+System.out.println(new Second());
+
+____________________________________________________________________
+
+public class First {
+   public void show() {
+      System.out.println("Show from First...");
+   }
+}
+
+public class Second extends First {
+   public static void show() {
+     System.out.println("Show Method from Class Second...");
+   }
+}
+
+public class Main {
+    public static void main(String[] args) {
+         First fb = (First) new Second();
+	 fb.show();
+    }
+}
+
+______________________________________________________________
+
+public class Demo {
+     public void show(Object ob) {
+	if (ob=="ABC") {
+	   System.out.println("Hi");
+	} else {
+	   System.out.println("Bye");
+	}
+    }
+    public static void main(String[] args) {	
+	Demo obj = new Demo();
+	obj.show("ABC");
+    }
+}
