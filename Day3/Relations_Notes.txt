@@ -1,0 +1,24 @@
+In OOPs, the IS-A relationship corresponds to the concept of inheritance. For instance, a mango is a fruit, a phone is a device.
+
+The reason for using the IS-A relationship in java are as follows:
+
+Reducing redundancy
+Code reusability
+IS-A relationship in java can be achieved by using the keyword ‘extends’ in the code.
+It is used for avoiding any kind of redundancy in the code and to reuse the class and methods in the program.
+The IS-A relationship is unidirectional which means that mango is a fruit but not all fruits are mango.
+IS-A relationship is also known to be tightly coupled which means that by changing one entity, other entity will also be changed.
+
+How to Achieve an IS-A Relationship?
+IS-A relationship in Java can be achieved by extending a class or interface by using the keyword ‘extends’.
+
+
+
+In an Object-Oriented element, the clients don’t have to make a big deal about which article is accomplishing the genuine work. To accomplish this, the Van class conceals the execution subtleties from the clients of the Van class. Thus, essentially what happens is the clients would ask the Van class to do a specific activity and the Van class will either accomplish the work without help from anyone else or request that another class play out the activity.
+
+Association is the relation between two separate classes which establishes through their Objects. Composition and Aggregation are the two forms of association. In Java, a Has-A relationship is otherwise called composition. It is additionally utilized for code reusability in Java. In Java, a Has-A relationship essentially implies that an example of one class has a reference to an occasion of another class or another occurrence of a similar class. For instance, a vehicle has a motor, a canine has a tail, etc. In Java, there is no such watchword that executes a Has-A relationship. Yet, we generally utilize new catchphrases to actualize a Has-A relationship in Java.
+
+It represents the Has-A relationship.
+It is a unidirectional association i.e. a one-way relationship. For example, here above as shown pulsar motorcycle has an engine but vice-versa is not possible and thus unidirectional in nature.
+In Aggregation, both the entries can survive individually which means ending one entity will not affect the other entity.
+
