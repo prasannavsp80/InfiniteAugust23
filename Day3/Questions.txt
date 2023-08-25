@@ -1,0 +1,17 @@
+1) Write a Program to implement multiplication of 2 numbers (100 digit number * 100 digit number) print exact result. 
+
+2) Write a program to display a number in english words 
+
+Case 1 : 
+
+	123 	One hundred twenty Three
+
+	1234	One thousand two Hundred thirty Four
+
+	400	Four Hundred
+	
+	790	Seven Hundred Ninety
+
+3) Write a Program to Convert Binary into Decimal 
+
+	

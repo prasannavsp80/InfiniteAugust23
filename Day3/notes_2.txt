@@ -1,0 +1,40 @@
+Properties 
+
+	provides an opportunity to protect a field in a class, 
+
+If you want to represent any variable as a field then we need the help of properties.
+
+If you want to control the internal behaviour of particular entity then we need the help of properites
+
+Properties are methods which are used for value types operations. 
+
+There are 3 types of properties known as 
+
+1) Read Only Property
+
+2) Write Only Property
+
+3) ReadWrite Property
+
+
+What is the difference between == and equals()
+
+
+
+Employ e1 = new Employ(1,"Sourav",88822);
+
+Employ e2 = new Employ(1,"Sourav",88822);
+
+Employ e3 = e2;
+
+System.out.println(e1==e2);
+System.out.println(e2==e3);
+
+System.out.println(e1.equals(e2));
+System.out.println(e2.equals(e3));
+
+
+
+
+
+

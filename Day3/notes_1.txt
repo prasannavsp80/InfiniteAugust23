@@ -1,0 +1,132 @@
+public class Test {
+    public void show(int x) {
+	System.out.println("Show from Int " +x);
+    }
+    public void show(double x) {
+	System.out.println("Show From Double " +x);
+    }
+    public void show(Object x) {
+	System.out.println("Show from Object " +x);
+    }
+
+
+    public static void main(String[] args) {
+	Test obj1 = new Test();
+	obj1.show(12);
+    }
+}
+
+_____________________________________________________
+public class Test {
+    public void show(double x) {
+	System.out.println("Show From Double " +x);
+    }
+    public void show(Object x) {
+	System.out.println("Show from Object " +x);
+    }
+
+
+    public static void main(String[] args) {
+	Test obj1 = new Test();
+	obj1.show("Infinite");
+    }
+}
+
+___________________________________________
+
+
+public class Test {
+   public static void main(String[] args) {
+	long x=12;
+        int y=x;
+   }
+}
+
+_____________________________________________________
+
+class Hello {
+   public static void main(String[] args) {
+	System.out.println("Hi");
+   }
+   public static void main() {
+	System.out.println("Bye");
+   }
+}
+
+class Test {
+   int x;
+   Test() {
+	this.x=12;
+   }
+   public static void show() {
+	System.out.print("x is " +x);
+   }
+   public static void main(String[] args) {
+	show();
+   }
+}
+
+________________________________________________________________
+
+class Hello {
+	static {
+	 System.out.println("Hello");
+  	}
+}
+public class Test {
+ 
+    Test() {
+	System.out.println("Hi");
+    }
+    static {
+	System.out.println("Bye");
+    }
+    public static void main(String[] args) {
+    }
+}
+
+1) What is Object Oriented Programming
+
+2) What are OOPS features
+
+3) Compiling and Execution procedure of java application
+
+4) boxing and unboxing with examples
+
+5) What is method overloading and overriding 
+
+6) What is Inheritance 
+
+7) Make a chart of Access Modifiers execution flow
+
+8) What is Abstract class and interface and find the differences 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
