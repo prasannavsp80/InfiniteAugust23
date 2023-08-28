@@ -1,0 +1,261 @@
+1)	What would be the output for the below code
+
+public class ArgsDemo {
+    String company = "Hexaware";
+public static void main(String[] args) {
+System.out.println(args[0] + " " +args[2]);
+    }
+}
+
+Java ArgsDemo asil prajwal sashwat  
+
+A) Asil Sashwat  B) Asil Prajwal C) Compile Time Error D) Runtime Error
+_____________________________________________________________________
+
+
+2) What is output
+public class P1 {
+public static void main(String[] args) {
+int i=10;
+int j = ++i;
+System.out.println(i + " " +j);
+    }
+}
+
+A) 10 10 B) 11 10 C) 11 11 D) 10 11
+_________________________________________________________________
+3) 
+	What is the output for
+public class Main {
+	public static void main(String[] args) {
+	int[] a = new int[]{12,4,6,33,23};
+	for(int i : a) {
+		System.out.println(a);
+	}
+	}
+A) 12, 4, 6, 33, 23  B) Compile Time Error C) Prints Address 5 times
+D) Runtime Error
+__________________________________________________________________________
+4) What is the output for the below code
+public class Hello {
+   public static void main(String[] args) {
+	String str="Hello";
+	System.out.println(str.concat(" World"));
+   }
+}
+
+A) Hello B) Compile Time Error C) Hello World D) Runtime Error
+______________________________________________________________________
+5)	Which statements are true
+	(i) Constructors will have same name as that of class name
+	(ii) Constructors will return values
+	(iii) Constructors can be overloaded
+	(iv) Constructors used to initialize member variables of the class
+
+A) I, II B) I, III, IV C) I D) III, IV
+__________________________________________________________________________
+6)	Which statement is true for Final class 
+i)	Can be inherited
+ii)	Cannot be inherited
+iii)	Cannot create an object
+iv)	Cannot have constructor
+
+A) I B) II C) III D) IV 
+__________________________________________________________________________
+7) What is the output
+public class Main
+{
+   public static void main(String[] args) {
+	int[] a=new int[6];
+	a[10]=66;
+   }
+}
+
+A) Code will run with no errors B) Code throw ArrayIndexOutOfBounds Exceptoin C) Compile Time Error D) No Output Produced
+__________________________________________________________________________
+8) 
+What would be output for the below code
+public class Ex2 {
+int a=18;
+public static void show() {
+System.out.println("Age  " +a);
+    }
+public static void main(String[] args) {
+new Ex2().show();
+    }
+}
+
+A) Age 12 B) Runtime Error C) None D) Compile Time Error
+__________________________________________________________________________
+
+9) public class Ex3 {
+
+public static void main(String[] args) {
+       String month;
+month = "Feb";
+switch(month) {
+case "Feb" : System.out.println("Hi");
+case "Mar" : System.out.println("Hello");
+case "Apr" : System.out.println("Bye");
+case "May" : System.out.println("Test");
+default :
+System.out.println("Default");
+       }
+    }
+}
+
+A) Hi B) Test C) Hi Hello Byte Test Default D) Hi Hello Byte Test 
+__________________________________________________________________________
+10) What would be output for
+class Test {
+void tests() {
+System.out.println("Hi");
+    }
+}
+
+class Fest extends Test {
+static void tests() {
+System.out.println("Bye");
+    }
+}
+public class Ex3 {
+
+public static void main(String[] args) { // line 4
+     Test obj = new Test();
+obj.tests();
+    }
+}
+A) Compile Time Error B) Runtime Error C) Hi D) Bye
+__________________________________________________________________________
+11) What would be output
+public class Ex3 {
+
+public static void main(String[] args) { 
+        String s1="abc";
+        String s2="abc";
+System.out.println(s1==s2);
+System.out.println(s1.equals(s2));
+    }
+}
+A) true false B) true true C) false false D) Compile time error
+__________________________________________________________________________
+12) To access a method in same package and other package derived classes, which modifier(s) we want
+
+A) private B) default C) protected D) ALL
+__________________________________________________________________________13) public class Ex3 {
+
+public Ex3() {}
+public static void main(String[] args) { 
+    }
+}
+What is public Ex3() here
+
+A) Method B) Class C) Constructor D) None 
+__________________________________________________________________________
+14) public class Ex3 {
+
+public Ex3() {}
+public static void main(String[] args) { 
+        String res = "i" + "like" + "java";
+	System.out.println(res);
+    }
+}
+A) ilikejava B) i C) i like java D) RUntime Error
+__________________________________________________________________________
+15) 
+What would be output
+public class Ex3 {
+
+static {
+System.out.println("Hi");
+  }
+static {
+System.out.println("Bye");
+  }
+
+public static void main(String[] args) {
+
+}
+}
+A) Hi B) Bye C) Hi Bye D) Compile Time Error
+__________________________________________________________________________
+16)
+
+public class P9 {
+    static int count;
+   public void increment()
+   {
+       count++;
+   }
+   public static void main(String args[])
+   {
+       P9 obj1=new P9();
+       P9 obj2=new P9();
+       obj1.increment();
+       obj2.increment();
+       System.out.println("Obj1: count is="+obj1.count);
+
+       System.out.println("Obj2: count is="+obj2.count);
+   }
+}
+A) 1 1 B) 0 0 C) 1 2 D) 0 1
+____________________
+
+17)
+class First {
+    public void show(int x) {
+        System.out.println("Hello " +x);
+    }
+
+    public int show(int x, int y) {
+        return x+y;
+    }
+}
+
+class Second extends First {
+     public int show(int x) {
+        return x;
+     }
+    public int show(int x,int y, int z) {
+        return x+y+z;
+    }
+}
+
+public class Quiz8 {
+    public static void main(String[] args) {
+        new Second().show(12,77,567);
+    }
+}
+A) Compile Time Error B) RUntime Error C) No Output D) Error in Code
+__________________________________________________________________________
+18)
+Which line will throw Error
+class First {
+    private int x=12;
+    protected String name = "Welcome";
+    public String company = "Company";
+}
+public class Quiz9 {
+    public static void main(String[] args) {
+        First obj = new First();
+        System.out.println(obj.x); // line 1
+        System.out.println(obj.name); // line 2
+        System.out.println(obj.company); // line 3
+    }
+}
+A) Line 3 B) Line 2 C) Line 1 D) No Error
+__________________________________________________________________________
+19) Which method of Object class will have String representation
+
+A) getClass() B) toString() c) equals() d) hashCode()
+__________________________________________________________________________
+20)
+public class Quiz99 {
+    public static void main(String[] args) {
+        System.out.println("HI");
+    }
+    public static void main() {
+        System.out.println("Bye");
+    }
+}
+A) Compile Time Error B) Runtime Error C) HI D) No Output
