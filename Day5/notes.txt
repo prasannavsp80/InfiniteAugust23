@@ -1,0 +1,91 @@
+Exception Handling : It is a mechanism of handling the runtime errors during the execution of the program. 
+
+There are 2 types of errors known as 
+
+	(i) Compile Time
+
+	(ii) Runtime Errors
+
+By using Exception Handling, we can overcome runtime errors. 
+
+To Handle exceptions, we have 3 blocks as
+
+1) try block : This block contains statement(s) in which there is possibility of getting runtime errors, the statement(s) which are placed in this block are treated as heavy weighted statements as JVM allocates excess memory to them. 
+
+2) catch block : Once exception raised in try block, then the control will be forwarded to catch block, this block contains alternate statement(s) for exceptions raised in try block. One try block can contains multiple catch blocks. 
+
+3) finally block : This block contains statement(s) that needs to be executed mandetorily irrespective of try and catch blocks, this block is not mandetory, but all the statement(s) which are placed in this block are executed as mandetory statements. 
+
+Exception is the top most class from which all kinds of exceptions are derived. 
+
+try {
+...
+...
+...
+} catch (Exception e) {
+...
+...
+...
+} finally {
+...
+...
+...
+}
+
+printStackTrace()
+
+There are 2 types of exceptions known as 
+
+	(i) Checked Exceptions : These are the exceptions that which occurs at compile time, during compilation JVM feels some erroneous code is there and stops the execution at compile time, can be handled at method level by using throws keyword. 
+
+	(ii) Unchecked Exceptions : These are the exceptions that which occurs at runtime. 
+
+
+Throw Keyword : If you want to throw exception based on condition, then we need the help of throw keyword. 
+
+Assume, accept a number if number < 0 then throw ArithmeticException if number = 0 then throw NumberZeroException, else print that number. 
+
+You can define custom exceptions by using Exception class, any class, that which derived from Exception can be treated as custom exception. 
+
+class class_name extends Exception {
+	
+
+
+
+Write a Program to accept email, and check its valid or not 
+
+
+1) if '@' not found then throw InvalidEmailException 
+
+2) if userName length < 10 chars then throw InvalidUserException
+
+else print the email address. 
+
+Project 
+__________
+
+
+Employ
+    empno
+    name
+    gender
+    dept
+    desig
+    basic 
+
+empno -> Not Negative Number
+Name contains min 5 chars
+gender -> Enum
+dept contains min 3 chars
+basic must be between 10000 and 80000
+
+
+
+
+
+
+
+
+
+
+
