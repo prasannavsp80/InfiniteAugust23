@@ -1,0 +1,17 @@
+package com.java.employ;
+
+public class Agent {
+
+	private int agentId;
+	private String firstName;
+	private String lastName;
+	private String city;
+	private PayMode payMode;
+	private double premium;
+}
+
+
+Validations : agentId to be incremented automatically
+		firstName and lastName contains min 4 chars
+		city cannot be Delhi
+		premium must be from 5000 to 99000
