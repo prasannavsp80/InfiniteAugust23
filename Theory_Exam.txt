@@ -1,0 +1,26 @@
+1) Explain about compiling and execution procedure of java application
+
+2) What is boxing and unboxing...Explain with examples
+
+3) What is Overloading and Overriding 
+
+4) What is abstract class and interface explain with examples
+
+5) How to overcome diamond problem in java 
+
+6) Write the syntaxes for below code
+
+	(i) Syntax to create an object for class
+	(ii) Syntax to unbox Employ class object (Assume obj contains Employ class object)
+	(iii) Assume we have Employ class, write syntax to create an array 		of objects
+	(iv) Write the syntax to implement inheritance (Take class First and Second) and implement Inheritance
+
+	(v) Write Syntax to create static and instance constructors
+
+	(vi) Write the syntax for toString() method
+
+	(vii) Assume we have abstract class Animal, and 3 subclasses as
+		Lion, Cow, and Crocodile as write syntax to create array 		of abstract classes.
+	(viii) Write the syntax to add interface to class
+	(ix) Write the syntax to sort the array of strings
+	(x) Give small syntax program to implement overloading.
