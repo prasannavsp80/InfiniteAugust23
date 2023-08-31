@@ -1,0 +1,94 @@
+A file is a collection of data, that which allows you to store the output permanently. To deal with files, we need the help of java.io package. 
+
+File class : this class allows you to deal with file propeties. 
+
+File f1 = new File(filename);
+
+getName()
+
+getParent()
+
+getPath() 
+
+FileReader : This class allows you to read data from file w.r.t. unicode characters 
+
+FileReader fr = new FileReader(filename);
+
+read() -> Used to read data char/char and returns ascii value, it returns -1 once it reaches end of file. 
+
+FileWriter : This class allows you to write contents into file. 
+
+FileWriter fw = new FileWriter(filename);
+
+write() : used to write data char/char .
+
+FileInputStream : Used to read data w.r.t. Stream of bytes. 
+
+read() : used to read data char/char and returns ascii value. 
+
+Returns -1 if it reaches EOF.
+
+FileOutputStream : used to write output to the given file w.r.t. Stream of bytes. 
+
+write() : Used to write data char/char. 
+
+DataOutputStream : used to write data w.r.t. Primitive Types. 
+
+DataOutputStream dout = new DataOutputStream(fileName);
+
+writeInt()
+writeDouble()
+writeUTF()
+writeBoolean()
+
+
+DataInputStream : Used to read data w.r.t. Primitive Types. 
+
+DataInputStream din = new DataInputStream(filename);
+
+readInt()
+readDouble()
+readUTF();
+readBoolean()
+
+BufferedReader : Allows you to read the data from the keyboard. 
+
+BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
+ObjectOutputStream : used to write Objects into the file. 
+
+ObjectOutputStream obj = new ObjectOutputStream(filename)
+
+writeObject() => Used to write object into the file. 
+
+ObjectInputStream : used to read objects from the file. 
+
+ObjectInputStream objin = new ObjectInputStream(fin);
+
+readObject() : Used to read objects from the file. 
+
+Serilization : It is a process of writing the custom objects into the file. 
+
+We can implement that by using implements keyword. 
+
+any class that which implements Serilizable interface, those objects we can store in file. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
