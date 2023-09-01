@@ -15,12 +15,18 @@ public class LeaveDetails {
 	private LeaveStatus leaveStatus;
 	private String managerComments;
 	
-	// DaoImpl 
+	// *** DaoImpl *** 
 	
 	// leaveAppliedOn will be today's date
 	// leaveStatus by default PENDING 
 	// noOfDays to be calculated automatically
 	// leaveid autoincrement 
 	
+	// *** BAL *** 
+	
+	// LeaveStartDate cannot be yesterday's date
+	// LeaveEndDate cannot be yesterday's date
+	// LeaveEndDate Greater than or equals to leaveStartDate 
+	// noOfDays cannot be more than 10 
 	
 }
