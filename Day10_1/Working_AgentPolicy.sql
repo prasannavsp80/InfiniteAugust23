@@ -8,11 +8,8 @@ create table AgentPolicy
    PolicyID INT REFERENCES Policy(PolicyID),
    IsSplitAgent INT,
    constraint pk_agp primary Key(AgentID,PolicyID)
-)
+);
 
-truncate table AgentPolicy
-
-select * from AgentPolicy
 
 INSERT INTO AGENTPOLICY(AGENTID,POLICYID,IsSplitAgent)
 VALUES(1,1,2),
