@@ -4,27 +4,28 @@ drop table if exists Agent;
 
 Create Table Agent
 (
-	AgentID INT Primary Key,
-	FirstName varchar2(30), 
-   MI varchar2(1),
-   LastName varchar2(30),
-   FullName varchar2(80),
-   Gender varchar2(10),
+	AgentID INT Primary Key AUTO_INCREMENT,
+	FirstName varchar(30), 
+   MI varchar(1),
+   LastName varchar(30),
+   FullName varchar(80),
+   Gender varchar(10),
     Dob TIMESTAMP,
-    SSN varchar2(30),
+    SSN varchar(30),
     MaritalStatus INT,
-    Address1 varchar2(30),
-    Address2 varchar2(30),
-    City varchar2(30),
-    State varchar2(30),
-    ZipCode varchar2(30),
-    Country varchar2(30)
-  )
+    Address1 varchar(30),
+    Address2 varchar(30),
+    City varchar(30),
+    State varchar(30),
+    ZipCode varchar(30),
+    Country varchar(30)
+  );
 
   
   
 
-Insert into Agent(FirstName,MI,LastName,Gender,DOB,SSN,MaritalStatus,Address1,Address2,City,STATE,ZipCode,Country)
+Insert into 
+Agent(FirstName,MI,LastName,Gender,DOB,SSN,MaritalStatus,Address1,Address2,City,STATE,ZipCode,Country)
 values('Sunitha','P','Premjee','Female','1988-01-02','434-55-3323',
 1,'5th Avenue','Near Church','Parlin','NJ','434554','USA'),
 ('Pranitha','R','Reddy','Female','1986-01-02','324-55-2344',
@@ -65,5 +66,5 @@ values('Sunitha','P','Premjee','Female','1988-01-02','434-55-3323',
 'MI','484555','USA'),
 ('Prasanna','P','Kumar','Male',
 '1980-9-03','423-23-1444',1,'ASRAO NR','Good Luck Cafe','SECBAD',
-'AP','500 062','INDIA') 
+'AP','500 062','INDIA') ;
 
