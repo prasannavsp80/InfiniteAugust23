@@ -1,0 +1,10 @@
+1) Write a Query that which Displays Employee Details who have 1 part name
+
+2) Write a Query that which display info. who have 2 part name
+
+3) Write a Query that which display info who have 3 part name 
+
+4) Write a Query to Display Total Employees count by dept wise 
+
+5) Write a Query to display how much total salary paying to 'JAVA' AND 'sql' depts
+
