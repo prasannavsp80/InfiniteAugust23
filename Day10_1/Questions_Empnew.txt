@@ -8,3 +8,5 @@
 
 5) Write a Query to display how much total salary paying to 'JAVA' AND 'sql' depts
 
+6) Write a Query to display records whose first 2 parts starts with same char. 
+
