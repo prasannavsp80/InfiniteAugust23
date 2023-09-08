@@ -62,5 +62,67 @@ public class BankDAOImpl implements BankDAO {
 		}
 		return bank;
 	}
+	@Override
+	public String closeAccountDao(int accountNo) throws ClassNotFoundException, SQLException {
+		Bank bank = searchAccountDao(accountNo);
+		if (bank!=null) {
+			connection = BankConnectionHelper.getConnection();
+			String cmd = "update bank set status='inactive' where accountNo=?";
+			pst = connection.prepareStatement(cmd);
+			pst.setInt(1, accountNo);
+			pst.executeUpdate();
+			return "Account Closed...";
+		}
+		return "Account No Not Found...";
+	}
+	@Override
+	public String depositAccountDao(int accountNo, int depositAmount) throws ClassNotFoundException, SQLException {
+		Bank bank = searchAccountDao(accountNo);
+		if (bank!=null) {
+			connection = BankConnectionHelper.getConnection();
+			String cmd = "Update Bank set Amount = Amount + ? Where AccountNo=?";
+			pst = connection.prepareStatement(cmd);
+			pst.setInt(1, depositAmount);
+			pst.setInt(2, accountNo);
+			pst.executeUpdate();
+			cmd = "Insert into Trans(AccountNo,TransAmount,TransType) values(?,?,?)";
+			pst = connection.prepareStatement(cmd);
+			pst.setInt(1, accountNo);
+			pst.setInt(2, depositAmount);
+			pst.setString(3, "C");
+			pst.executeUpdate();
+			return "Amount Credited...";
+		}
+		return "Account No Not Found...";
+	}
+	@Override
+	public String withdrawAccountDao(int accountNo, int withdrawAmount) throws ClassNotFoundException, SQLException {
+		Bank bank = searchAccountDao(accountNo);
+		if (bank!=null) {
+			int amount = bank.getAmount();
+			if (amount-withdrawAmount >= 1000) {
+				connection = BankConnectionHelper.getConnection();
+				String cmd = "Update Bank set Amount = Amount - ? Where AccountNo=?";
+				pst = connection.prepareStatement(cmd);
+				pst.setInt(1, withdrawAmount);
+				pst.setInt(2, accountNo);
+				pst.executeUpdate();
+				cmd = "Insert into Trans(AccountNo,TransAmount,TransType) values(?,?,?)";
+				pst = connection.prepareStatement(cmd);
+				pst.setInt(1, accountNo);
+				pst.setInt(2, withdrawAmount);
+				pst.setString(3, "D");
+				pst.executeUpdate();
+				return "Amount Debited...";
+			} else {
+				return "Insufficient Funds...";
+			}
+		}
+		return "Account No Not Found...";
+	}
 
 }
+
+
+
+

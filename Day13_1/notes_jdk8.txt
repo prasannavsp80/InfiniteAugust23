@@ -1,0 +1,46 @@
+Lambda expression is a new and important feature of Java which was included in Java SE 8. It provides a clear and concise way to represent one method interface using an expression. It is very useful in collection library. It helps to iterate, filter and extract data from collection.
+
+The Lambda expression is used to provide the implementation of an interface which has functional interface. It saves a lot of code. In case of lambda expression, we don't need to define the method again for providing the implementation. Here, we just write the implementation code.
+
+Java Lambda Expression Syntax
+(argument-list) -> {body}  
+Java lambda expression is consisted of three components.
+
+1) Argument-list: It can be empty or non-empty as well.
+
+2) Arrow-token: It is used to link arguments-list and body of expression.
+
+3) Body: It contains expressions and statements for lambda expression.
+
+
+Functional Interface : If an interface strictly have one abstract method, known as functional interface. 
+
+You can define functional interface with annotation @functionalInterface
+
+void show() {
+...
+}
+
+interface IHello {
+void display();
+}
+
+display = show;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
