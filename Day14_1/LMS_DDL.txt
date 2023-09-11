@@ -10,7 +10,7 @@ Create Table Employee
     EmpName varchar(30),
     EmpEmail varchar(30),
     MobileNo varchar(30),
-    DateOfJion Date,
+    DateOfJoin Date,
     ManagerId INT,
     LeaveAvail INT
 );
