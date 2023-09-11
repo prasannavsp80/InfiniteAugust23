@@ -1,0 +1,17 @@
+1) How to iterate HashTable records
+
+2) Implement your own program using HashMap() 
+
+3) What is the difference between ArrayList and LinkedList classes in collection framework?
+4) What is the difference between ArrayList and Vector classes in collection framework?
+
+5) What is the difference between HashSet and HashMap classes in collection framework?
+
+6) What is the difference between HashMap and Hashtable class?
+
+7) How can we sort the elements of an object? 
+
+8) What does the hashcode() method?
+
+9) What is the purpose of optional in java, write your own example
+
