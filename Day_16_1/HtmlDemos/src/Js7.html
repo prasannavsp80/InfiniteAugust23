@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+	function show() {
+		if (frmData.firstName.value=="") {
+			document.getElementById("err1").innerHTML="Please Enter FirstName...";
+			return;
+		} else {
+			document.getElementById("err1").innerHTML="";
+		}
+		if (frmData.lastName.value=="") {
+			document.getElementById("err2").innerHTML="Please Enter LastName...";
+			return;
+		} else {
+			document.getElementById("err2").innerHTML="";
+		}
+		
+		var firstName, lastName, fullName;
+		firstName = frmData.firstName.value;
+		lastName = frmData.lastName.value;
+		fullName = firstName + " " +lastName;
+		frmData.fullName.value = fullName;
+	}
+</script>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<form name="frmData">
+	<table border="3" align="center">
+		<tr>
+			<th colspan="2">
+				Name Form
+			</th>
+		</tr>
+		<tr>
+			<th>First Name</th>
+			<td>
+				<input type="text" name="firstName" autofocus="autofocus" onblur="show()" />
+				<span id="err1"></span> 
+			</td>
+		</tr>
+		<tr>
+			<th>Last Name</th>
+			<td>
+				<input type="text" name="lastName" onblur="show()" />
+				<span id="err2"></span> 
+			</td>
+		</tr>
+		<tr>
+			<th>Full Name</th>
+			<td>
+				<input type="text" name="fullName" />
+			</td>
+		</tr>
+	</table>
+</form>
+</body>
+</html>
