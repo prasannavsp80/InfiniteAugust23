@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+function show() {
+    var result = "";
+    result += "Absolute Value is  " + Math.abs(-12) + "<br/>";
+    result += "Power Value  " + Math.pow(2, 3) + "<br/>";
+    result += "Sqrt Value is  " + Math.sqrt(49) + "<br/>";
+    result += "Ceiliing Value  " + Math.ceil(12.000001) + "<br/>";
+    result += "Floor Value  " + Math.floor(12.99999) + "<br/>";
+    result += "Rounded Value  " + Math.round(8843.8844) + "<br/>";
+    document.getElementById("result").innerHTML = result;
+}
+</script>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body onload="show()">
+   <span id="result"></span>
+</body>
+</html>

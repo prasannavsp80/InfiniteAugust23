@@ -1,6 +1,27 @@
 <!DOCTYPE html>
 <html>
 <head>
+<script>
+	function mult() {
+		if (frmCalc.firstNo.value=="") {
+			document.getElementById("err1").innerHTML="Please Enter First Number...";
+			return;
+		} else {
+			document.getElementById("err1").innerHTML="";
+		}
+		if (frmCalc.secondNo.value=="") {
+			document.getElementById("err2").innerHTML="Please Enter Second Number...";
+			return;
+		} else {
+			document.getElementById("err2").innerHTML="";
+		}
+		var firstNo, secondNo, result;
+		firstNo = frmCalc.firstNo.value;
+		secondNo = frmCalc.secondNo.value;
+		result = firstNo * secondNo;
+		frmCalc.result.value=result;
+	}
+</script>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
 </head>
@@ -14,12 +35,14 @@
 			<th>First Number</th>
 			<td> 
 				<input type="number" name="firstNo" />
+				<span id="err1" style="color:red;"></span>
 			</td>
 		</tr>
 		<tr>
 			<th>Second Number</th>
 			<td>
 				<input type="number" name="secondNo" />
+				<span id="err2" style="color:red;"></span>
 			</td>
 		</tr>
 		<tr>
@@ -34,7 +57,7 @@
 				&nbsp;&nbsp;&nbsp;&nbsp;
 				<input type="button" value="Sub" />
 				&nbsp;&nbsp;&nbsp;&nbsp;
-				<input type="button" value="Mult" />
+				<input type="button" value="Mult" onclick="mult()" />
 			</th>
 		</tr>
 	</table>

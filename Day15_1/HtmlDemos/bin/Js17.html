@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+	function show() {
+		var arr = new Array("Ganesh","Sagar","Ariz","Amit","Satya");
+		var result="";
+		for(var v in arr) {
+			result+=arr[v] + " ";
+		}
+		document.getElementById("result").innerHTML=result;
+	}
+</script>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body onload="show()">
+	<span id="result"></span>
+</body>
+</html>
