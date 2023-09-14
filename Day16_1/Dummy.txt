@@ -1,17 +1,19 @@
-public void before() {
-    System.out.println("before");
+public class JunitTest {
+ 
+   @BeforeClass
+   public static void beforeClass() {
+     System.out.println("BeforeClass...");
+   }
+   @AfterClass 
+   public static void afterClass() {
+     System.out.println("AfterClass...");
+   }
+
+   public void before() {
+    System.out.println("Before...");
    }
    @After 
    public void after() {
-    System.out.println("After");
-  }
-   @Test
-   public void test1() {
-    System.out.println("Test 1");
-   }
-
-   @Test
-   public void test2() {
-    System.out.println("Test2");
+    System.out.println("After...");
    }
 }
