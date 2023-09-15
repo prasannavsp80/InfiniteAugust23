@@ -1,0 +1,143 @@
+Web Application
+
+These are the applications, that which are to be called from various places rather than where they are created. 
+
+If you want to make any distributed or robust applications, then we need the help of web applications. 
+
+You can create web applications in 2 ways as 
+
+	(i) Scripting Language
+
+		These are the languages, that which are interpreted, during runtime they takes lot of time to execute. 
+
+	(ii) Programming Langauge
+
+		These are the languages, that which are compiled first, so during runtime they takes very less time to execute. 
+
+In web applications we can implement 
+
+(i) Client-Side Scripting
+
+	Enables you to access the application from same system
+
+	No Network Traffic
+
+	Execution will be faster
+
+(ii) Server-Side Scripting 
+
+
+	Enables you to access the application from the server
+	
+	Network traffic is high
+
+	A bit slower 
+
+*** Any intranet based application w.r.t. No security please opt for client-side scripting ***
+
+*** Any internet based application w.r.t. Min. Security please opt for both client-side and server-side scripting ***
+
+*** Any internet based application w.r.t. High security please opt for server-side scripting ***
+
+HTML : Allows you to create any sample web pages. 
+
+To start with HTML 
+
+<html>
+</html> 
+
+<head> 
+</head> : Used to define the global content for the given page. 
+
+<title></title> : Used to display  heading on title bar. 
+
+<body>
+</body> : Contains the actual content for the given page. 
+
+Definition Language : Allows you to write Definitions with answers. 
+
+You can start with definition language, by using 
+
+<dl>
+</dl>
+
+<dt>
+</dt> : Definition Term
+
+<dd>
+</dd> : Definition Description 
+
+Forms allows you to accept data from the  keyboard. 
+
+<form name="frmData">
+</form>
+
+<input type="text" />
+<input type="password" /> 
+<input type="checkbox" /> 
+<input type="radio" /> 
+
+<input type="number" /> 
+<input type="date" /> 
+
+<input type="time" /> 
+
+<input type="url" /> 
+<input type="email" /> 
+
+<input type="button" />
+<input type="submit" /> 
+
+<input type="reset" /> 
+
+Tables : Allows you to display data w.r.t. Rows and Columns. 
+
+You can define table, by using 
+
+<table>
+</table>
+
+<tr> 
+</tr> : used to add new row to the given table. 
+
+<th>
+</th> : used to add heading to the table cell. 
+
+<td> 
+</td> : used to add data to the table cell. 
+
+Javascript : Allows you to write 
+	
+	-> Business Logic
+
+	-> Event-Based Programming
+	
+	-> Validations. 
+
+
+
+<script>
+</script> 
+
+You can define code using functions 
+
+function function_name() {
+...
+...
+...
+}
+
+onload
+
+onclick
+
+onchange 
+
+alert() : Used to display any value or message. 
+
+
+
+
+
+
+
