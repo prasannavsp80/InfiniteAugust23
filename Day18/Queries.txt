@@ -1,0 +1,174 @@
+
+-- MODULE 1
+
+-- 1) Display records from students (Batch-wise total no.of students exists)
+
+
+-- 2) Display total payment paid by all students from payment table student-wise
+
+
+-- 3) Display total no.of records from Payment table
+
+
+-- 4) Display total no.fo records from payment table, by eliminating duplicate student No
+
+
+-- 5) Display the ccode, max(stdate) from batches table.
+
+
+-- 6) Display max. fee from Course table. 
+
+-- 7) Display max. fee from Course table w.r.t. Ccode 
+
+
+-- 8) Display total courses from batches table which are started in last 3 months
+
+
+-- 9) Display all courses from batches table w.r.t. Ccode (min 2 entries required)
+
+-- 10) Display all records from batches table, which courses are started last 3 months 
+-- and min. 2 records to be entered. 
+
+
+-- 11) Display information from course_faculty table, as which faculty taking how many courses in ascending order w.r.t. Count
+
+
+
+-- MODULE 2
+
+-- 1) _HAVING_ clause is used to select groups based on condition. 
+
+
+-- 2) Select count(*) from students;  Is it a valid query.
+
+-- 3) What is the order of WHERE, GROUP BY and ORDER BY.
+
+
+-- 4) Display ROLLNO of students who have paid for more than twice.
+
+
+-- 5) Display average time taken for subject ORA.
+
+
+-- 6) Display faculty who can take more than 2 courses.
+
+-- 7) Display least course fee.
+
+
+
+-- 8) Display the number of months between first and last batches of course Java.
+
+
+-- 9) Display Year, course and number of batches of that course.
+
+
+-- 11) Display the number of students joined in each month.
+
+
+-- 12) Display the number of students joined in each month  of the current year.
+
+
+
+-- MODULE 3
+
+-- 1) Display all matching records from batches and Courses table. 
+
+
+-- 2) Display matching/unmatching records from batches and courses table.
+
+-- 3) Display all matching records ascending order of stdate
+
+-- 4) Display all matching and unmatching records from batches, courses and faculty table. 
+             
+       
+       
+-- MODULE 4
+
+-- 1) What is required to join two tables?
+
+-- 2) What is meant by self-join?
+
+
+-- 3) How do you qualify a column that is existing in two or more tables that are being joined?
+
+--4) What is table alias? Is it stored anywhere?
+
+--5)What happens when you join two tables without any condition?
+
+
+-- 6) Display rollno, student name, pay date and amount paid.
+
+-- 7) Display rollno , student name, batch code ,  stdate of batch  and faculty code.
+
+
+-- 8) Display rollno , student name, course name  ,  stdate  of batch  and faculty code.
+
+
+-- 9) Display rollno , student name, course name , faculty code and enddate of all batches that were completed.
+
+
+-- 10) Display students who have got more number of characters in name than the student with roll number 10.
+
+-- 11) Display rollno, student name, email , pay date and amount paid.
+
+-- 12) In previous query include the details of student who haven’t paid anything so far.
+
+
+-- 13) Display the details of students who have paid nothing so far.
+    
+          
+          
+-- MODULE 5
+             
+-- 1) Get the details of students who have paid today.
+
+
+-- 2) Display the details of batches handled by faculty name ‘Kevin Loney’.
+
+
+-- 3) display the details of the faculty members who have not taken any batch in the last three months.
+
+
+-- 4) displays the details of batches that are taken by faculty with qualification MS or the course fee is more than 5000.
+
+
+-- 5) displays the details of the students who belong to batches that are taken by faculty with qualification MS.
+
+
+-- 6) displays the details of the batches that have taken maximum duration among the batches of the same course.
+
+-- 7) Get the details of course that has highest course fee.
+-- 8) Get the details of students who have made a payment in the last month but no in the current month.
+
+
+
+-- MODULE 6
+
+-- 3) What is the result of x > ANY (10,20), if x is 15? ___1_____.
+
+
+-- 4) Subquery always passes the result to the main-query [T/F] __TRUE___
+
+
+-- 5) Subquery can be used in VALUES clause of INSERT command.[T/F] _TRUE___. 	
+
+
+-- 6) Display details of courses taken by students who joined in the month of june, 2001.
+
+
+-- 7) Delete the details of students who haven’t paid anything so far
+
+
+-- 8) Display the details of course for which there are more than 3 batches.
+
+
+-- 9) Display the details of course that has highest number of batches.
+
+-- 10.	Change the ENDDATE of batch B8 to the ENDDATE of most recent batch.
+-- 11) Display the details of students who haven’t paid total amount so far.
+
+
+
+-- 12) Display the details of payment made by students of Oracle batch started on 5-dec-2000.
+
+
