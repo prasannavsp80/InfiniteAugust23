@@ -55,4 +55,34 @@
     <servlet-name>LoginServlet</servlet-name>
     <url-pattern>/LoginServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>EmployShowServlet</display-name>
+    <servlet-name>EmployShowServlet</servlet-name>
+    <servlet-class>com.java.servlets.EmployShowServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>EmployShowServlet</servlet-name>
+    <url-pattern>/EmployShowServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>EmploySearchServlet</display-name>
+    <servlet-name>EmploySearchServlet</servlet-name>
+    <servlet-class>com.java.servlets.EmploySearchServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>EmploySearchServlet</servlet-name>
+    <url-pattern>/EmploySearchServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>EmployInsertServlet</display-name>
+    <servlet-name>EmployInsertServlet</servlet-name>
+    <servlet-class>com.java.servlets.EmployInsertServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>EmployInsertServlet</servlet-name>
+    <url-pattern>/EmployInsertServlet</url-pattern>
+  </servlet-mapping>
 </web-app>
