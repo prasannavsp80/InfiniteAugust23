@@ -3,7 +3,7 @@ package com.java.infinite;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
-public class EntryptPassword {
+public class EncryptPassword {
 
 	public static String getCode(String password) {
         /* Plain-text password initialization. */  
