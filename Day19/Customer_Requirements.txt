@@ -1,0 +1,24 @@
+Customer
+	Cust_ID Primary Key Auto_Increment (INT)
+	customer_Firstname (varchar(30))
+	customer_LastName (varchar(30))
+	customer_UserName (varchar(30))
+	customer_Password (varchar(200))
+	customer_Email  (varchar(30))
+	customer_PhoneNo (varchar(15))
+	Customer_Status (varchar(20))
+	Customer_ActivatedOn DateTime
+
+Otp
+	Otp_ID Primary Key Auto_Increment (INT)
+	Cust_ID Foreign Key(Customer) INT
+	OptCode varchar(10)
+	GeneratedOn DateTime
+
+Requirements : Write Code to Create Account for Customer
+
+-> CustomerPassword must be Encrypted
+-> Customer_Status By Default 'OTP PENDING'
+-> Generate OTP and store in OTP table. 
+
+OTP to be shared by email which mentioned in Customer Table. 
