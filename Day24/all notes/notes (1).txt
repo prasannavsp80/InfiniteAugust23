@@ -1,0 +1,150 @@
+Session Tracking : 
+
+A session is a group of activities that are performed by a user while accessing a particular web site. The process of keeping track of settings across sessions is called session tracking. 
+
+Techniques to keep track of sessions in servlets : 
+
+1) URL Rewriting : This technique by which the URL is modified to include the session ID of a particular user and is sent back to the client. In any subsequent transactions, the client is forced to use the session ID when it sends a request to the server. 
+
+2) Hiddent Form Fields : This is one of the techniques that can be used to keep trakc of users by placing hidden fields in a form. The values that have been entered in these fields are sent to the server when the user submits the form. 
+
+<html>
+<body>
+<input type="hidden" name="t1">
+</body>
+</html>
+
+__________________________________________
+
+Using the HttpSession interface 
+
+Every user who logs on to the web site is automatically associated with the HttpSession object. The servlet can be use this object to store information about the user's session. 
+
+Methods : 
+
+getSession() -> This method is used to retrieve the current HttpSession that is associated with the user. If a session does not exists then a session can be created by using getSession(true); 
+
+getValue() -> Retrieves the value in the session object. 
+
+putValue() -> Used to assing a value to the session. 
+
+getCreationTime() -> Returns the time when the session was created. 
+
+getID() -> Returns the session ID. 
+
+Cookies : are small text files that are used by a web server to keep track of users. A cookie has values in the form of key-value pairs. They are created by the server and sent to the client with the HTTP response headers. 
+
+A web browser, which is client software, is expected to support 20 cookies per host and the isize of each cookie can be a max. of 4 bytes each. 
+
+ Characterstics of Cookies : 
+  
+   1) Cookies are only sent back to the server that created them and not to any other server. 
+
+   2) Cookies can be used by the server to find out the computer name, IP address or any other details of the client computer. 
+_______________________________________________________-
+
+Inter-Servlet Communication : 
+
+Servlets are present in the same web server can communicate with each other and can also share resources, such as variables amongst each other. Dividing tasks across servlets also helps to implement a structured approach to implementing tasks. RequestDispatcher interface is used to implement the communication between two servlets. 
+
+RequestDispatcher Interface : 
+
+ Used to forward or delegate a request from a servlet to other resources, such as a servlet, an HTML file or a jsp file. 
+
+This interface encapsulates the URL of a resource that exists in a particular servlet context. The forward() methodx of this interface is used to delegate a task to the resource encapsulated by a particular interface object. The getServletContext() method of the ServletConfig interface is used to obtain a reference to the servlet context in whihc a servlet executes. 
+
+method : 
+
+forward() -> 
+
+public abstract void forward(ServletRequest req,ServletResponse res) throws IOException,ServletException
+
+setAttribute() -> This function can be used to set a value, to an attribute that is availabel in the servlet context. 
+
+getAttribute() -> public abstract Object getAttribute(String name)
+  
+  This function is used to obtain the value of an attribute. 
+
+______________________________________________________
+
+JSP (Java Server Pages)
+
+JSP technology has facilitated the segregation of the work profiles of a web designer and a web developer. A web designer can design and formulate the layout for the web page by using HTML. On the other hand, a web developer working independently can use java code and other JSP specific tags to code for the business logic. The simultaneous construction of the static and dynamic content facilitates development of quality appliations with increased productivity. 
+
+  A JSP page after compilation generates a servlet and therefore incorporates all servlet functionalities. Servlets and JSP can share common features such as platform independence, creation of database driver web applications, and server side programming capabilities etc..
+
+  However, there are also some basic differences between jsp and servlets. 
+
+  -> Servlets tie up files (HTML file for static content and java file for dynamic content) to independently handle the static presentation logic and the dynamic business logic. Due to this, if any change made to any file requires recompilation of servlet, JSP on the other hand allows java to be embedded directly into an HTML page by using special tags. The HTML content and the Java Content can also be placed in separate files. Any changes made to HTML content is automatically compiled and loaded onto the server. 
+
+
+  -> Servlet programming involves extensive coding. Therefore, any change made to the code requires identificatino of the static code content and dynamic code content to facilitate incorporation of the changes. 
+
+  All jsp files are stored on the web server with the extension of .jsp. When the client/browser requests for a particular JSP page, the server in turn sends a request to the JSP page. 
+
+Structure of JSP page : 
+
+A JSP page consists of regular HTML tags representing the static content and the code enclosed within special tags representing the dynamic content. 
+
+The dynamic content must be represented in <% and %> tags only. 
+
+The scripting elements consist of java code snippets, while directives are used to define the specifications for the entire JSP page. 
+
+You can specify the comments in <%-- and --%> tags. 
+
+Example : 
+
+<%@ page language="java" %>
+<HTML>
+<HEAD>
+<TITLE>Welcome</TITLE>
+</HEAD>
+<BODY>
+<H1> Hellow how r u</H1>
+
+<% java.util.Date now=new java.util.Date(); %>
+<h2><%= now.getHours() %> : <% =now.getMinutes() %> : <%= now.getSeconds() %>
+</BODY>
+</HTML>
+__________________________________________________________________
+
+Identifying the JSP tags : 
+
+<%-- --%>  :  Used for comments entry. 
+
+<%@ %>  : Directives -> Control the structure of the servlet and serve as mere messages for the JSP engine specifying actions for a particular JSP page. 
+
+<%! %> : Declarations -> Define variables and methods. All declarative statements in a JSP page should end with a semi-colon. 
+
+<%  %> : Scriplets : Specify java code fragments. 
+
+<%= %> : Expressions : Specify statements that are evaluated and displayed in the output. 
+
+<jsp:> : Actions : Insert a file, reuse beans, or forward the script control to another HTML. 
+
+JSP Directives : 
+
+A directive element in a JSP page provides global information about a particular JSP page and can be of three types 
+
+page, include and taglib. 
+
+syntax : 
+
+<%@ directive (attribute="attribute value") %> 
+
+The Page Directive : 
+
+  It defines attributes that notify the servlet engine about the general settings of a JSP page. 
+
+Attributes : 
+
+contentType="MIME type"  : The default value is text/html.
+
+extends="packagename.class" : The name of the parent class that the generated servlet will extend from. 
+
+errorPage="url" : The URL of the error page that will be used to handle exceptions. 
+
+isErrors
+
+
+

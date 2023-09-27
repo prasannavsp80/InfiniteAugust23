@@ -1,0 +1,1221 @@
+File System Drawbacks : 
+________________________
+
+1) No Security 
+
+2) Data redundancy is high
+
+3) Changes will not reflect in all places 
+
+4) Creates multiple copies of data 
+
+5) Not able to store different data polymorphisms. 
+
+Database : 
+
+A database is set of interrelated files, stored with min. redundancy to serve many users work concurrently. 
+
+DBMS (Database Management System) 
+
+    The software that which allows you to perform transactions on data like adding new data, modifying already existing data and removing unwanted data known as DBMS. 
+
+Objectives : 
+_____________
+
+	1) Provides an efficient and convinient env, that which allows you to store the data in and retrieve data. 
+
+	2) Granting access on data to users based on their credentials 
+
+Drawbacks : 
+___________
+
+   1) Data Redundancy 
+
+   2) Risk to Data Integrity 
+
+   3) Data Isolation 
+
+   4) Difficult Access to Data 
+
+   5) Unsatisfactory Security Measures 
+
+Data Model : It is the description of the org. of data in the database. It also describes the relationship among the data and any constraints that have to be defined on data. 
+
+
+There are 2 types of data models known as 
+
+1) Object-based logical Model : Focuses on describing the data, and the relationship among the data and any constraints defined. 
+
+2) Record-based logical model : Focuses on describing the data structure and the access techniques in the DBMS. 
+
+Object-baed Logical model : 
+
+The ER model : It is based on the real world perception that comprises a collection of objects or entites and the relationships among the data. 
+
+Entity : An entity is a thing, that which can be easily identified. 
+
+Entities are represented using Rectangle symbol. 
+
+Attribute : 
+
+An attribute is a property of a given entity, 
+
+Relationship : It is an association among various entities. There are 3 types of relationships known as 
+
+   (i) One-One Relationship
+
+  (ii) One-Many Relationship
+
+ (iii) Many-Many Relationship 
+
+
+Record Based Models : 
+
+1) Hierarchical model : Data is represented in the form of tree, data in hierarchical model is represented by a collection of records and relationships between the data are represented by links. 
+
+2) Network Model : similar to hierarchical model in the way that the data and the relationships among them are represented in the form of records and links. You can represent the records in the daabase graphically. 
+
+3) Relational Model : A table in the database has fixed record length with fixed number of attributes or fields. 
+
+
+The row in a table is called tuple and the column is called an attribute. Every column in the table must have a unique name, the no.of tuples is called the cardinality of the table, and the no.of attributes is called the degree of the table. 
+
+The relational model is based on the principle of relational algebra. 
+
+It is a collection of operators that operate on relationships. 
+
+
+1) Display list of tables available in the current database 
+
+select * from tab;
+
+2) Display information about Emp table 
+
+desc Emp 
+
+3) Display the instance name of oracle 
+
+select * from global_name;
+
+4) Display all records from Emp table 
+
+select * from emp;
+
+5) Display Empno, Ename, Sal from Emp table 
+
+select Empno,Ename,Sal from Emp;
+
+6) select Empno,Job,MgrNo,Comm from Emp table
+
+7) select Deptno,Loc from Dept table 
+
+Where Clause : Used to display only the filtered records (Conditional based records) 
+
+8) Display all records whose Sal >= 3000
+
+select * from Emp
+where Sal >= 3000;
+
+select Empno,Ename,Sal from Emp
+Where Sal < 3000;
+
+
+select Empno "Employ No", Ename "Employ Name", Sal "Salary" from Emp
+where Sal < 3000;
+
+9) Display all records whose Job is 'CLERK' 
+
+select * from Emp 
+where job='CLERK';
+
+
+10) Display information whose ENAME is 'SCOTT' 
+
+11) Between...And : used to display info from start to end range 
+
+select * from Emp 
+WHERE Sal BETWEEN 3000 AND 5000;
+
+12) Display all records whose MGR is NULL 
+
+select * from Emp where MGR IS NULL;
+
+13) Display all records whose COMM is NULL
+
+In clause : Used to display only the specific record values.
+
+select * from Emp 
+where job IN('CLERK','MANAGER');
+
+select * from Emp
+where SAL IN(3000,5000);
+
+select * from Emp
+where ENAME IN('SCOTT','FORD','ADAMS');
+
+select * from EMP
+where COMM IN(300);
+
+
+like operator : Used to display data w.r.t. Wild cards 
+
+select * from Emp
+where Ename like 'S%';
+
+-- Displays all records whose name starts with 'S'
+
+select * from Emp 
+where ENAME like '%T';
+
+-- display all records whose name ends with 'T'
+
+ORDER BY : Used to display data on specific field(s) in ascending or descending order. 
+
+select Empno,Ename,SAL,JOB from Emp 
+order By Ename desc;
+
+
+select Empno,Ename,SAL,JOB from Emp 
+order By JOB;
+
+
+select Empno,Ename,SAL,JOB from Emp 
+order By JOB,Ename;
+
+select Empno,Ename,SAL,JOB from Emp 
+order By JOB desc,Ename;
+
+distinct : Used to eliminate duplicate entries at the time of display. 
+
+select distinct job from emp;
+
+row_number() : Used to generate row_number() on the field specified. Field to be specified in over clause. 
+
+select empno,ename,job,sal,
+ROW_NUMBER() OVER(Order By Job) "Rno"
+from Emp;
+
+Rank() : Used to generate rank no on the field specified. 
+
+select empno,ename,job,sal,
+Rank() OVER(Order By Job) "Rno"
+from Emp;
+
+dense_rank() :Used to generate seq. rank no. 
+
+select empno,ename,job,sal,
+dense_rank() OVER(Order By Job) "Rno"
+from Emp;
+
+select empno,ename,job,sal,
+ROW_NUMBER() OVER(partition by job Order By Job) "Rno"
+from Emp;
+
+CASE  
+
+select deptno from Emp;
+
+select empno,ename,job,deptno,
+CASE Deptno
+   WHEN 10 THEN 'Oracle'
+   WHEN 20 THEN 'Java'
+   WHEN 30 THEN 'Dotnet'
+END "DeptName" from emp;
+
+select Empno,Ename,job,Sal,
+CASE job
+   WHEN 'CLERK' THEN SAL+500
+   WHEN 'SALESMAN' THEN SAL+600 
+   WHEN 'PRESIDENT' THEN SAL+1000 
+   WHEN 'MANAGER' THEN SAL+700
+   ELSE SAL+800 
+END "Incr Sal"
+FROM Emp;
+
+
+select Empno,Ename,SAL,
+CASE 
+WHEN COMM IS NULL THEN 0
+ELSE COMM 
+END "Comm",
+CASE 
+  WHEN COMM IS NULL THEN SAL
+  ELSE SAL+COMM 
+END "Total"
+from Emp;
+
+String Functions : 
+___________________
+
+for function calculations you have to use dual table. Its dummy table
+that which returns the calculated value. 
+
+1) instr() : Used to dislay the first occurrence of given char.
+
+select instr('keerthi','e') from dual;
+select instr('sravani','a') from dual;
+
+select Ename,instr(Ename,'A') from Emp;
+
+2) length() : Used to find out the length of string 
+
+select length('Keerthi') from dual;
+
+select length('Sravani') from dual;
+
+select ename,length(ename) "Len" from dual;
+
+
+3) reverse() : Used to display a string in reverse order 
+
+select reverse('mounika'),reverse('bhargava') from dual;
+
+select Ename,reverse(ename),reverse(job) from emp;
+
+
+4) lower() : Used to display in lower case 
+
+5) upper() : used to display in upper case 
+
+6) initcap() : Used to display first char upper case 
+
+select lower('Keerthi'),upper('keerthi'),initcap('keerthi') from dual;
+
+select lower(ename),upper(ename),initcap(ename) from emp;
+
+7) substr(): Used to display the part of string 
+
+select substr('bhargav',1,3) from dual;
+select substr('bhargav',2,3) from dual;
+
+select reverse(substr('bhargav',1,3)) from dual;
+
+8) replace() : used to replace word/char with new word/char in all occurrences 
+
+select replace('java training','java','oracle') from dual;
+
+Date Functions : 
+_________________
+
+1) sysdate : Used to display the todays date 
+
+select sysdate from dual;
+
+2) Add_months() : Used to add no.of months to the given date 
+
+select add_months(sysdate,2) from dual;
+
+3) to_char() : used to display values w.r.t. Specified format 
+
+select to_char(sysdate,'YYYY') from dual;
+
+select to_char(sysdate,'YY') from dual;
+
+select to_char(sysdate,'D') from dual;
+select to_char(sysdate,'DD') from dual;
+select to_char(sysdate,'DDD') from dual;
+select to_char(sysdate,'DAY') from dual;
+select to_char(sysdate,'MM') from dual;
+select to_char(sysdate,'MONTH') from dual;
+select to_char(sysdate,'DY') from dual;
+select to_char(sysdate,'hh') from dual;
+select to_char(sysdate,'mi') from dual;
+select to_char(sysdate,'ss') from dual;
+select to_char(sysdate,'ms') from dual;
+
+select to_char(sysdate,'mm/dd/yyyy hh:mi:ss') from dual;
+
+4) last_day() : Display the last day of the month specified
+
+select last_day(sysdate) from dual;
+
+5) next_day() : used to display the next day specified. 
+
+select next_day(sysdate,'FRIDAY') from dual;
+
+select next_day(sysdate-7,'FRIDAY') from dual;
+
+Number Functions : 
+___________________
+
+1) abs() : Returns the absolute value. 
+
+select abs(-12) from dual;
+
+2) power(n,m) : Returns n power m value 
+
+select power(2,3) from dual;
+
+3) sqrt(n) : returns the sqrt value 
+
+select sqrt(49) from dual;
+
+4) ceil() : Returns the greatest integer value. 
+
+select ceil(12.000001) from dual;
+
+5) floor() : Returns the smallest integer value. 
+
+select floor(12.999999) from dual;
+
+6) round() : rounds the no. to specific digits 
+
+select round(8876.8787,2) from dual;
+select round(8876.8787,1) from dual;
+select round(8876.8787,0) from dual;
+select round(8876.8787,-1) from dual;
+select round(8876.8787,-2) from dual;
+select round(8876.8787,-3) from dual;
+
+
+1) Display the last occurrence of given char in a string 
+
+
+select reverse('sravani') from dual;
+
+select instr(reverse('sravani'),'a') from dual;
+
+select length('sravani')-instr(reverse('sravani'),'a')+1 from dual;
+
+select case 
+when instr('sravani','a') = 0 then 0
+else
+length('sravani')-instr(reverse('sravani'),'a')+1 
+end LastOcc
+from dual;
+
+ex : 'sravani' find out the last occurrence of 'a' 
+
+2) Take full name and split into firstname and lastname 
+
+Ex : 'harsha reddy' display as 'harsha' 'reddy'
+
+select substr('harsha reddy',1,instr('harsha reddy',' ')) FirstName,
+substr('harsha reddy',instr('harsha reddy',' ')+1,length('harsha reddy'))
+lastName
+from dual;
+
+'bharath chopade'
+bharath 
+chapde
+
+3) In word 'misissipi' count no.of i's 
+
+select length('misissipi')- length(replace('misissipi','i','')) from dual;
+
+4) count no.of words in the given name 'harsha vardhan reddy' 
+
+5) Add 3 years 5 months and 10 days to the today's date 
+
+6) Display the first day of the current month 
+
+select last_day(sysdate);
+
+select to_char(add_months(last_day(sysdate),-1)+1,'DAY') from dual;
+
+7) Display all fridays of current month.
+
+select next_day(add_months(last_day(sysdate),-1)+1,'FRIDAY')
+"First Friday",
+   next_day(next_day(add_months(last_day(sysdate),-1)+1,'FRIDAY'),'FRIDAY')
+"Second Friday",
+next_day( next_day(next_day(add_months(last_day(sysdate),-1)+1,'FRIDAY'),'FRIDAY'),'FRIDAY')
+"Third Friday",
+next_Day(next_day(next_day(next_day(add_months(last_day(sysdate),-1)+1,'FRIDAY'),'FRIDAY'),'FRIDAY'),'FRIDAY')
+"Fourth Friday",
+CASE
+WHEN TO_CHAR(
+next_day(next_Day(next_day(next_day(next_day(add_months(last_day(sysdate),-1)+1,'FRIDAY'),'FRIDAY'),'FRIDAY'),'FRIDAY'),'FRIDAY'),'MM')
+=to_char(sysdate,'MM')
+THEN 
+next_day(next_Day(next_day(next_day(next_day(add_months(last_day(sysdate),-1)+1,'FRIDAY'),'FRIDAY'),'FRIDAY'),'FRIDAY'),'FRIDAY')
+END
+"FIfth Friday"
+from DUAL;
+
+Employ(Empno,Name,Dept,AadharNo,Desig,Gender,SalDate,Basic)
+
+Candidate Key : 
+
+Any attribute, that which uniquely identifies rows of a table known as candidate key. {Empno,AadharNo} 
+
+One of the candidate key needs to be chosen as primary key based on priority.  
+
+Any key that which is candidate key, but not primary key known as alternate key. (AadharNo)
+
+Any key that which uniquely identifies rows of a table, made up of more than one attribute known as composite key. 
+
+{Empno+SalDate}
+
+Foreign Key : Primary key in the parent table will be foreign key in the child table. 
+
+A relatinal system said to be truly relational if it satisfies 12 codd rules. 
+
+1) Information Representation
+ Ensure any data need to be represented in terms of rows and columns of tables.
+
+2) Guaranteed Access 
+
+Every data value in the relational database should be logically accessible by specifying a combination of the table name, the primary key value and the column name.
+
+3) Systematic Treatment of NULL values
+
+DBMS must allow NULL values to support missing or inapplicable info. They must be distinct from zero or spaces. 
+
+4) Data Description Rule
+
+The data in the database is the categorized in such a way that system catalog and user catlog. System catalog consists of system objects that are exist at the time of installation. User catalog contains objects that are to be created by the user during working with databases. 
+
+The tables in both catalogs need to contain description and structure of database. These tables are created owned and maintained by the DBMS. Ensure you can give privileges to the tables, and system tables are read-only.
+
+5) Comprehensive Data Sublanguage
+
+This rule states that the system must support all the following functions : 
+
+ 1) Data Definition
+ 2) View Definition
+ 3) Data Manipulation operations
+ 4) Security and Integrity constraints
+ 5) Transaction Management Operations. 
+
+
+6) View Updating 
+
+7) High level Insert, Update and Delete 
+
+Ensures that rows should be treated as sets in insert, update and delete operations.  IT stresses on the set-oriented nature of database. 
+
+8) Physical Data Independence 
+
+Application programs must remain unimpaired when any changes are made in the storage representation or access methods. 
+
+
+9) Logical Data Independence 
+
+Changes should not affect the user's ability to work with the data. 
+
+10) Data Distribution Rule
+
+Databases must allow manipulation of distributed data located on other computer system. 
+
+11) Non-Subversion
+
+States that different levels of the language cannot subvert or bypass the integrity rules and constraints.  The DBMS must ensure that no other level can bypass the constraints specified to maintain the integrity of the database. 
+
+12) Integrity Rule 
+
+Integrity constraints must be storable in the system catalog. 
+
+Aggregate Functions : 
+______________________
+
+1) sum() : Used to perform sum operation on the specified field. 
+
+select sum(sal) from Emp;
+
+2) avg() : used to perform avg. operation on the specified field 
+
+select avg(sal) from Emp;
+
+3) max() : Displays max value on the specified record field. 
+
+select max(sal) from Emp;
+
+4) min() : Displays min value on the specified record field. 
+
+select min(sal) from Emp;
+
+5) count(*) : Displays total no.of records of the given table. 
+
+select count(*) from Emp;
+
+select count(comm) from Emp;
+
+select count(mgr) from emp;
+
+group by : Used to generate the summarized reports. 
+
+select job,count(*) from Emp
+group by job;
+
+select job,sum(sal) from Emp
+group by job;
+
+select job,max(sal) from Emp
+group by job;
+
+select job,min(sal) from Emp
+group by job;
+
+select job,avg(sal) from emp
+group by job;
+
+select job,sum(sal),avg(sal),count(*),max(sal),min(sal)
+from Emp group by job
+having count(*) > 1;
+
+select job,sum(sal),avg(sal),count(*),max(sal),min(sal)
+from Emp group by job
+having sum(sal) > 5000;
+
+nvl() : 
+
+select empno,ename,sal,nvl(comm,0) from Emp;
+
+select empno,ename,sal,nvl(comm,0),
+nvl2(comm,sal+comm,sal) from emp;
+
+
+select mgr,nvl(to_char(mgr),'No Manager')
+from Emp;
+
+select comm,nvl(to_char(comm),'No Commission')
+from Emp;
+
+123
+'123'
+
+select ename,sal,
+nvl(to_char(comm),'No Commission'),
+nvl2(to_char(comm),'Both','Only sal')
+from emp;
+
+select length(job),length(ename),
+nullif(length(job),length(ename))
+from emp;
+
+select Sal,comm,mgr,coalesce(mgr,comm,10) from Emp;
+
+select sal,comm,mgr,coalesce(comm,mgr,10) from emp;
+
+select empno,ename,sal,job,
+decode(job,'CLERK',sal+500,
+           'MANAGER',sal+1000,
+           'SALESMAN',sal+800,
+           'ANALYST',sal+600,
+	   SAL) "Rev Sal"
+from Emp
+order by job;
+
+
+
+Display headname as if job is 'CLERK' then display 'Bhargav'
+                    if job is 'MANAGER' then display 'Harsha'
+	            if job is 'ANALYST' then display 'Mounika'
+                     else display 'Sravani'
+
+
+Joins : 
+
+Joins are used to extract data from more than one table, there are different types of joins known as 
+
+1) Inner Join : It acts as an INTERSECT operator, used to extract only the common records from the given table(s). 
+
+   select field1,field2,field3....
+   from table1 INNER JOIN table2 ON
+   table1.primaryKey=table2.ForeignKey 
+
+select Dept.deptno,dname,empno,ename,sal
+from Dept INNER JOIN Emp ON 
+Dept.Deptno=Emp.Deptno 
+
+
+select D.Deptno,Dname,Empno,Ename,Sal
+from Dept D INNER JOIN Emp E
+ON D.Deptno=E.Deptno
+
+select Ed.Empno,Ed.Ename,Ed.sal,Dd.deptno,dd.dname
+from 
+(select empno,ename,sal,deptno from Emp)
+Ed,
+(select deptno,dname,loc from dept)Dd
+where Ed.deptno=Dd.deptno;
+
+
+select Ed.Empno,Ed.EName,Ed.Sal,Ed.IncSal,Dd.Deptno,Dd.Dname
+from
+(select empno,ename,sal,deptno,sal+1000 IncSal from Emp)
+Ed,
+(select deptno,dname,loc from dept)Dd
+where Ed.IncSal >= 3000
+AND Ed.Deptno=Dd.Deptno
+
+/* Display top 5 employs based on their salary */ 
+
+select Ed.Empno,Ed.Ename,Ed.Job,Ed.sal
+from 
+(select Empno,Ename,Job,Sal,
+ROW_NUMBER() over(order by sal desc) RNO
+from Emp)Ed
+where Ed.Rno <= 5;
+
+
+select  Ed.Deptno,CASE ED.RNO
+WHEN 1 THEN Ed.Dname ELSE '' 
+END Dname,Ed.Ename,Ed.Sal,Ed.Hiredate
+from 
+(select D.Deptno,Dname,Ename,Sal,Hiredate,
+ROW_NUMBER()OVER(Partition by Dname ORDER By Dname) RNO from 
+Dept D INNER JOIN Emp E on
+D.Deptno=E.Deptno)Ed
+
+2) Outer Join : Used to display both matching and unmatching records from the given table. There are 3 types of outer joins known as 
+
+	(i) Left Outer Join :
+
+		All the records from the left-side table, and matching records from the right side table. 
+ 
+       (ii) Right Outer Join : All the records from the right-side table, and matching records from the left-side table. 
+
+      (iii) Full Outer Join : All matching and unmatching records from the given table. 
+
+
+select Dept.deptno,dname,empno,ename,sal
+from Dept LEFT JOIN Emp ON 
+Dept.Deptno=Emp.Deptno 
+
+
+3) Cross Join : Generates cartician product of given tables 
+
+assume table A contains (n) records, table B contains (m) records then 
+it generates n*m records. 
+
+select * from Dept cross join Emp;
+
+
+4) Self Join : If a table joins with itself, then it is known as Self join. 
+For this aliasing is mandetory. 
+
+select E1.Empno,E2.Empno,E1.Ename "Mgr Name",
+E2.Ename "Employ Name"
+from 
+Emp E1 INNER JOIN Emp E2 ON 
+E1.Empno=E2.Mgr
+Order By E1.Empno;
+
+
+select C.CCODE,C.NAME,duration,
+F.Fcode,F.Name,F.Qual
+from Courses C INNER JOIN Course_FACULTY CF
+ON C.CCODE=CF.CCODE
+INNER JOIN Faculty F ON
+F.FCODE=CF.FCODE
+
+
+select C.CCODE,C.NAME,duration,
+F.Fcode,F.Name,F.Qual
+from Courses C RIGHT JOIN Course_FACULTY CF
+ON C.CCODE=CF.CCODE
+RIGHT JOIN Faculty F ON
+F.FCODE=CF.FCODE;
+
+Data Types : 
+_____________
+
+number,
+varchar2
+char
+datetime
+
+
+Employ
+
+   Empno number
+   Name  varchar2(30)
+   Dept  varchar2(30)
+   Gender varchar2(10)
+   Desig  varchar2(30)
+   Basic  number(9,2) 
+
+DDL (Data Definition Language) 
+
+     Create
+
+	Create Table table_name
+	(
+          field1 datatype,
+	  field2 datatype,
+	  field3 datatype....
+        );
+
+Create Table Employ
+(
+   Empno number 
+   constraint pk_employ_empno primary key,
+   name varchar2(30) NOT NULL,
+   dept varchar2(30)
+   constraint chk_Employ_Dept check(dept in('Dotnet','Java','Oracle')),
+   Gender varchar2(10)
+   constraint chk_Employ_Gender check(gender in('Male','Female')),
+   desig varchar2(30)
+   constraint chk_Employ_desig check(desig in('ASE','SE','Manager')),
+   Basic number(9,2)
+   constraint chk_Employ_basic check(Basic Between 1000 AND 50000)   
+);
+
+drop table Employ;
+
+Empno -> Primary Key,
+Name -> Not Null,
+Dept -> Dotnet or Java or Oracle
+Gender - Male or Female
+desig -> ASE or SE or Manager
+Basic -> Between 1000 AND 50000 
+
+Insert into Employ values(1,'harsha','java',
+'male','programmer',58233);
+
+
+     Alter
+
+     Drop : Used to drop the database objects. 
+
+     Truncate : Used to remove the records from the table. 
+
+Student(Sno,Name,Sub1,Sub2,Sub3,Total,Aveg) 
+
+Sno -> Primary Key
+Name -> Not NULL 
+Sub1, Sub2, Sub3 -> Number (1 to 100)
+Total and Aveg are derived attributes. 
+
+Create Table Student
+(
+   Sno Number constraint pk_student_sno primary key, 
+   Name varchar2(15) NOT NULL,
+   Sub1 Number constraint chk_student_sub1 check(sub1 between 1 AND 100),
+   Sub2 number constraint chk_student_sub2 check(sub2 between 1 AND 100),
+   Sub3 number constraint chk_student_sub3 check(sub3 between 1 AND 100),
+   Total number,
+   Aveg number(9,2)
+);
+
+Insert into Student(Sno,Name,Sub1,Sub2,Sub3)
+values(1,'venkat',68,88,56);
+
+Update : Used to update the table values. 
+
+update table_name set Field1=value,Field2=value {where condition}
+
+update Student set Total=sub1+sub2+sub3,
+aveg=(sub1+sub2+sub3)/3;
+
+update employ set basic=basic+100 where empno=1;
+
+update employ set basic=basic-100 where empno=2;
+
+update employ set name=upper(name) where empno=3;
+
+update employset name='mounika' where empno=4;
+
+delete : Used to delete the record(s) from the given table. 
+
+delete from table_name where condition;
+
+
+delete from Employ where empno=3;
+
+delete from student where sno=2;
+
+
+drop table student;
+
+drop table employ;
+
+create table EmployNew
+(
+  Empno number,
+  Name varchar2(10)
+);
+
+
+/* Add Gender field to table Employ */ 
+
+alter table Employ
+add Gender varchar2(10);
+
+/* Add Dept field to the table Employ */ 
+
+alter table Employ
+add Dept varchar2(20);
+
+/* Add Desig field to the table Employ */ 
+
+alter table Employ 
+add desig varchar2(20);
+
+/* Add basic field to the table Employ */ 
+
+alter table Employ
+add basic number(9,2);
+
+desc Employ;
+
+/* Modify the size of name column to 20 */ 
+
+alter table Employ
+modify name vachar2(20);
+
+/* Add Primary Key constraint on Empno */ 
+
+alter table Employ
+add constraint pk_employ_empno primary key(empno);
+
+/* Change Name field to not null */ 
+
+alter table Employ
+Modify name varchar2(20) not null;
+
+/* Add Constraint to Dept Field */ 
+
+alter table Employ
+add constraint chk_emp_dept
+check(Dept IN('Dotnet','Java','Oracle'));
+
+/* Add constraint to Desig Field */ 
+
+alter table Employ
+add constraint chk_Employ_desig
+check(Desig IN('se','ase','manager'));
+
+/* Add constarint to the Basic Field */ 
+
+alter table Employ
+add constraint chk_employ_Basic
+check(basic between 1000 AND 50000);
+
+create table Student
+(
+   Sno number,
+   Name varchar2(5),
+   Sub1 Number,
+   Sub2 Number,
+   Sub3 Number, 
+   Total Number, 
+   Aveg Number(9,2),
+   Status varchar2(10)
+);
+
+
+/* remove status field from the given table */ 
+
+alter table Student Drop Column Status;
+
+alter table student
+add constraint chk_student_sub1
+check(sub1 between 1 and 100);
+
+
+Subqueries : 
+_____________
+
+Sometimes it is not possible to extract data by using single sql statement, then we need the help of subqueries. A subquery is a query that which is having another query inside, the query which is inside known as inner query, the query which is outside known as outer query. Everytime, the result of the Inner query will be send as input to the outer query. 
+
+1) Display the name of person who is getting max salary 
+
+select ename,sal from Emp where sal=
+(select max(sal) from Emp);
+
+2) Display the 2nd max sal
+
+select ename,sal from emp where 
+sal=(select max(sal) from Emp where sal < 
+(select max(sal) from Emp));
+
+
+3) Display the 2nd min sal
+
+/* Display the nth max salary */ 
+
+select Ename,sal from emp E1 where 5-1=
+(select distinct count(*) from Emp E2 where 
+E1.sal < E2.sal);
+
+select  Ed.Ename,Ed.sal
+from
+(select ename,sal,dense_rank() over(Order By sal desc) Rno
+from Emp)Ed
+where Ed.Rno=4;
+
+create table EmpPayroll
+(
+   Empno number,
+   Name varchar2(30) not null,
+   Dept varchar2(30), 
+   Gender varchar2(10),
+   SalDate Date,
+   constraint pk_empPayroll_enosal primary key(empno,SalDate)
+);
+
+insert into EmpPayroll
+values(1,'asdf','asdf','male','01-Mar-2017');
+
+
+create table Test
+(
+   eno number, name varchar2(30)
+);
+
+insert into test values(1,'bhargav');
+insert into test values(1,'bhargav');
+insert into test values(1,'bhargav');
+insert into test values(1,'bhargav');
+insert into test values(2,'venkat');
+insert into test values(2,'venkat');
+insert into test values(2,'venkat');
+insert into test values(2,'venkat');
+insert into test values(2,'venkat');
+insert into test values(2,'venkat');
+
+
+select rowid from test;
+
+delete from test where rowid!=ALL(
+select max(rowid) from Test T where Test.eno=T.eno);
+
+
+IF Subquery returns more than one value, then we have to use either ALL or ANY keywords.
+
+ALL -> It acts as AND operator.
+
+Empno <> ALL(10,20,30) means 
+
+Empno <> 10 AND Empno <> 20 AND Empno<> 30
+
+Empno <> ANY(10,20,30) means 
+
+Empno <> 10 OR Empno <> 20 OR Empno <> 30
+
+1) Display all Dname details from Dept, where deptno is there dept 
+but not there in Emp 
+
+select dname from Dept where Deptno !=ALL(select deptno from Emp);
+
+2) Display all faculty details who teaches 'ora' 
+
+select fcode,name,qual from faculty;
+
+select fcode,ccode from course_faculty;
+
+select fcode,name,qual from faculty
+where fcode=ANY(select fcode from course_faculty
+where ccode='ora');
+
+select * from batches;
+
+select * from faculty;
+
+
+Display the details of batches handled by faculty name ‘George Koch’.
+
+select * from batches
+where fcode=(select fcode from faculty where lower(name)='george koch');
+
+1) Display all batch details, whose QUAL is like MS OR
+course fee > 5000;
+
+
+
+select * from batches
+where fcode in 
+      (select  fcode from faculty where qual like '%MS%')
+   or  ccode in
+      ( select ccode from courses where fee > 5000);
+
+
+Get the details of course that has highest course fee.
+
+Display all course details whose fee is > course duration is 25 days 
+
+select name from courses
+where  fee > any ( select fee from courses where duration = 25);
+
+Data Integrity : It is imp. to ensure that the data stored in tables is complete and consistent.  The concept of maintaining consistency and completeness of data is called data integrity.  It is enforced to ensure that the data in the database is accurate, consistent and reliable.  
+
+1) Entity Integrity : Ensures that each row can be uniquely identified by an attribute called the primary key. The primary key column contains unique value in all the rows. This column cannot be NULL. 
+
+2) Domain Integrity : Ensures that only a valid range of values is stored in a column. It can be enforced by restricting the type of data.  For suppose the dept field need to contain the list of values as 'computers' or 'physics' or 'maths' then it is coming under the part of domain integrity. 
+
+3) Referential Integrity : Ensures that the values of the foreign key match the values of the corresponding primary key. 
+
+EmpNew(Empno,Name,Dept,Sal)
+
+Create Table EmpNew
+(
+   Empno number 
+   constraint pk_Empnew_Empno Primary Key,
+   Name varchar2(30) NOT NULL,
+   Dept varchar2(30),
+   Sal number(9,2)
+);
+
+Insert into EmpNew values(1,'bhargav','Java',44323);
+Insert into EmpNew values(3,'Mounika','Oracle',48111);
+
+commit;
+
+Leave(LeaveID+,Empno-,Lavail,Ltaken,Lop);
+
+Create Table Leave
+(
+   LeaveId number constraint pk_leave_leaveid primary key,
+   Empno number 
+   constraint fk_leave_empno references EmpNew(Empno),
+   Lavail number,
+   Ltaken Number,
+   Lop number
+);
+
+insert into leave values(1,2,3,3,0);
+
+
+drop table Leave;
+
+drop table EmpNew;
+
+create table Empnew
+(
+   Empno number,
+   Name varchar2(30) NOT NULL,
+   Dept varchar2(30),
+   Sal number(9,2)
+);
+
+Create Table Leave
+(
+   LeaveId number,
+   Empno number,
+   Lavail number,
+   Ltaken Number,
+   Lop number
+);
+
+
+alter table leave 
+add constarint fk_leave_empno
+foreign key(Empno) references EmpNew(empno);
+
+Agent(AgentID,FirstName,LastName,city,State,Pincode)
+
+AgentID -> Number -> Primary Key
+FirstName,LastName,City,State,pincode -> varchar2(30)
+
+Policy(PolicyID,AppDate,Installment,AnnualPremium,PaymentMode)
+
+PolicyID -> Number -> Primary Key
+
+Appdate -> Date 
+
+Installment,AnnualPremium -> Number(9,2)
+
+paymentmode -> Number  -> 1 or 2 or 3 
+
+
+
+paymentmode number
+constraint chk_policy_paymentmode
+--check(paymentmode IN(1,2,3)),
+check(paymentmode between 1 AND 3);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

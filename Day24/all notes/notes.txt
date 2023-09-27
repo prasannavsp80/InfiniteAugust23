@@ -1,0 +1,260 @@
+Program in RMI
+
+1. Implement the Remote Interface 
+2. Create the RMI Server
+3. Create an RMI Client
+4. Run the RMI Application. 
+
+You can create the Remote Interface as 
+
+import java.rmi.*;
+
+public interface Hello extends Remote
+{
+	public String sayhello() throws RemoteException;
+}
+
+You can implement the remote method as 
+
+import java.rmi.*;
+import java.rmi.server.*;
+
+public class HelloImpl extends UnicastRemoteObject implements Hello
+{
+	public HelloImpl()
+	{
+		super();
+	}
+	public String sayhello() throws RemoteException
+	{
+		return "Hi this is sowjanya from java";
+	}
+}
+
+Creating the RMI server. 
+
+The RMI Server class contains the server objects that are invoked by the client remotely.  You need to create the object of the remote service class in the main() method of the RMI server class to create the server object. 
+
+  Hello h=new HelloImpl();
+
+You need to register the server object in the bootstrap registry before the server object is ready to accept request from the client. You can use the following statement to register a server object in the registry. 
+
+Naming.rebind("localhost",h);
+
+rebind() method takes two parameters : 
+
+   The first parameter is a URL string that contains the location and name of the remote object. If the port number is not specified, the RMI registry uses the default port 1099. if the user has to define the post the URL string has to be changed to rmi://ipaddress:1234/server
+
+The second parameter is a referece to the object implementation 
+
+the setSecuirtyManager() method of the SecurityManager class is used in the server class to set the security manager for the RMI Application.  
+
+You can write the server program as : 
+
+import java.rmi.*;
+import java.rmi.server.*;
+
+public class HelloServer
+{
+	public static void main(String args[])
+	{
+		try
+		{
+			System.setSecurityManager(new RMISecurityManager());
+			Hello h = new HelloImpl();
+			Naming.rebind("localhost", h);
+			System.out.println("Object is registered...");
+			System.out.println("Now the server is waiting for the client request");
+		}
+		catch (Exception e)
+		{
+			System.out.println("Error  " + e);
+		}
+	}
+}
+
+Creating an RMI Client : 
+
+The client uses the stub object to access the remote object that exists on the server. You specify the name of the server object in the lookup() method of the java.rmi.Naming class to find the stub object. 
+
+_______________________________________________________
+
+Steps to run the RMI Application. 
+
+1. compile all the java files as 
+
+javac *.java
+
+2. Create the stub and skelton as 
+
+ rmic filename (in which you are accessing the UnicastRemoteObject class and where the interface is implemented). 
+
+  rmic HelloImpl
+
+3. Start the RMI Registry 
+
+  start rmiregistry 
+
+4. start the server application 
+
+ java HelloServer 
+
+5. start the client application 
+
+  java HelloClient 
+
+
+RMI Socket Factory : Distrubuted applications use factories that are user-defined classes to invoke remote methods. The factory objects are used in variouis types of java APIs, JDBC, RMI and XML.  The factory class enables you to create a remote object without invoking the constructor. 
+
+The steps to create and run an application using the RMI factory objects are : 
+
+ -> Create and install the java.rmi.Server.RMISocketFactory class
+ -> Implement the factory class. 
+ -> Create an RMI application using the factory class. 
+ -> Compile, register and run the RMI application. 
+
+_________________________________________________________
+
+
+Running the Chatting Program 
+_____________________________
+
+
+1. Compile all java programs 
+
+ javac *.java
+
+2. rmic ChatServer { Creating the Stub and Skeleton for Client and Server  }
+
+3. rmic ChatClient { Creating the Stub and skeleton for Client and Client } 
+
+4. start the rmiregistry 
+
+    start rmiregistry
+
+5. java ChatServer  { Start the server }.
+
+6. java ChatClient Souji { Start the Client  }.
+
+7. java ChatClient prasanna { Start another client }. 
+_________________________________________________________
+
+Servlets : 
+
+Servlets are the server-side programs that enables you to run the program in an enabled web-browser. 
+
+Servlets enables you to extends the functionality of the application server for generating dynamic contents in an application. Servlets possess features as 
+
+1) Security : A web container provides a runtime environment for executing a servlet. Servlets inherit the security feature provided by the web container.  
+
+2.Session Management : It is the mechanism of tracking the state of a user across multiple requests.  A session maintains the client identity and state across multiple requests. 
+
+3. Instance Persistence : Servlets help to enhance the performance of the server by preventing frequent disk access. 
+
+To access a servlet, you first need to compile the servlet and then deploy the class file of the servlet in the java-enabled application server. A web container provides the runtime environment for running a servlet. Web containers provide various services required by the web applications as 
+
+1) Managing various stages in the life cycle of a servlet such as initializing a servlet instance, processing the client request and removing the servlet instance from service. 
+
+2) Defining the security constraints when a servlet need to read and write data from a database, such as SQL Server 2000.
+
+3) Creating and removing the servlet instances from an instance pool to serve multiple requests. 
+
+ 
+The Servlet interface is the root interface of the servlet class hierarchy. All servlets need to either directly or indirectly implement the Servlet interface. The GenericServlet class of the Servlet API implements the Servlet interface. In addition to the Servlet interface, the GenericServlet clas implements the ServletConfig interface. 
+
+1) javax.servlet.Servlet interface : The Servlet interface of the javax.servlet package defines methods that the web container calls to manage the servlet life cycle. 
+
+public void destroy() -> The web container calls the destroy() method just before removing the servlet instance. 
+
+public String getServletInfo() -> Returns a string that contains information about the servlet, such as author, version and copyright. 
+
+public void init() -> The Web container calls this method after creating the servlet instance. 
+
+
+Servlet Life Cycle : 
+
+1) init() method 
+
+2) service() method 
+
+3) destroy() method 
+
+The Servlet life cycle methods  : 
+
+1. The web container loads the servlet class and creates one or more instances of the servlet class. 
+
+2. The web container invokes the init() method of the servlet instance during the initialization of the servlet. init() method is invoked only once in the servlet life cycle. 
+
+3. The web container invokes the service() method to allow a servlet to process a client request. 
+
+4. The service() method processes the request and returns the response back to the web container. 
+
+5. The servlet then waits to recieve and process subsequent requests as explained in 3 and 4 steps. 
+
+6. It calls the destroy() method, before removing the servlet instance from the service. 
+
+The init() method : 
+__________________
+
+This method is called during the initialization phase of the servlet life cycle, the web container first maps the requested URL to the corresponding servlet available in the web container and then instantiates the servlet. 
+
+public void init(ServletConfig config) throws ServletException 
+{
+ 
+}
+
+public class Slife extends HttpServlet
+{
+    static int count;
+
+    public void init(ServletConfig config) throws ServletException
+    {
+	count++;
+    }
+}
+
+The service() method : 
+______________________ 
+
+This method processes a client requests, each time the web container receives a client request, it invokes the service() method, The service() method is invoked only after the initialization of the servlet is complete. 
+
+ServletRequest object contains the information about the service request made by the client. 
+
+ServletResponse object contains the information returned by the servlet to the client. 
+
+The service() method dispatches a client request to one of the request handler methods of the HttpServlet interface, such as doGet(), doPost()
+
+Note : service() method is not overridden in HttpServlet as the web container automatically invokes the service() method. 
+
+The doGet() method : This method processes the client request, which is sent by the client, using the HTTP GET method. GET is a type of HTTP request method taht is commonly used to retrieve static resources.  When you type a URL on the address bar of your browser to view a static web page, the browser uses the GET method to send the request. 
+
+public void doGet(HttpServletRequest req,HttpServletResponse res) throws IOException,ServletException 
+
+To handle the client requests that are received using GET method, you need to override the doGet() method. In the doGet() method, you can retrieve the client information of ;the HttpServletRequest object. You can use the HttpServletReponse obhject to send the response back. 
+
+The doPost() method : This method handles the requests in a servlet, which is send by the client using the HTTP POST method. Unlike GET method, the POST request sends the data as part of the HTTP request body, As a result, the data send does not appear as a part of the URL. 
+
+public void doPost(HttpServletRequest req,HttpServletResponse res) throws IOException,ServletException
+
+
+
+________________________________________________________
+
+Program to run sum of 2 nos using servlets. 
+
+To Run the Servlet, you need to perform the following steps. 
+
+1. Open the NetBeans IDE and click on file ->new Project 
+
+2. In the Web tab select the WebApplication from that. 
+
+3. Right click on the project and select the html file from that. 
+
+4. Type the contents in that. 
+
+5. Right click on the project and select the Servlet from that. 
+
+6. 
+
+
+

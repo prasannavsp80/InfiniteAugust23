@@ -1,0 +1,106 @@
+Types of Testing : 
+__________________
+
+1) Build Acceptance Testing  (Sanity Testing) 
+
+  This is type of testing, in which once will conduct overall testing on the released build, inorder to check whether it is proper for further detailed testing or not.  In this they will check for 
+
+   a) Whether the build can be properlty installed or not
+
+   b) Whether one can navigate to all the pages of the application or not
+
+   c) Whether all the objects are available and properly arranged or not 
+
+   d) Whether the reqd connections are properly established or not. 
+
+2) Regression Testing : It is type of testing in which one will test the already tested functionalities again and again. 
+
+This will happen in 2 situations 
+
+  a) Whenever the testers find some defects, send it to the development dept, after rectification, developers will relase the next build, once the next build releases test engineers will check the defect functionality as well as the related functionality are working fine or not. 
+
+  b) Whenever some new features are incorported or added, next build is released to the testing department then the test engineers will once again test all the related featuresof those new features.  Inorder to check whether they are working same as previous or not. 
+
+  *** Testing the new features for the 1st time known as new testing but not regression testing ***
+
+3) ReTesting : 
+   
+         It is type of testing in which one wil perform testing on the same functionality again and again with multiple set of values inroder to come to a conclusion whether it is working fine or not. 
+
+  a) During regression testing, retesting will be conducted also 
+
+  b) Regression test starts from 2nd build and continues upto last build
+ 
+  c) Retesting starts from 1st build and continues upto last build. 
+
+
+4) Alpha testing : It is type of user-acceptance testing done in the company by our test eingineers in the presence of user. 
+
+5) Beta Testing : It is a type of user-acceptance testing, done in the clients place either by the end users or by the third party testing experts. 
+
+6) Installation Testing : In which one will install the application into the environment by following guidelines provided in the deployhment document inorder to check whether those guidelines are suitable for installing the application into the env. or not. 
+
+7) Compatability Testing : IN which one will install the applciation in multiple envs prepared with different combinations inorder to check whether it is suitable with those envs or not. 
+
+8) Usability Testing : In this one will check, whether the application is user-friendly or not. 
+
+9) End to End Testing : One will perform testging on the end to end scenarios of the applications. 
+
+10) Security Testing : It is a type of testing in which one will check whether the application properly protected or not. To do the same, usually black box tester needs to concentrate on 
+
+  a) Authetication Testing : It is a type of testing in which one will try to enter different username and passwords and check whether the application is allowing only the authorized users or not.  
+
+  b) Direct URL Testing : It is type of testing, in which one will enter the direct URL of secured pages and check whether the application is allowing those pages or not. 
+
+  c) Firewal Leakage Testing : It is type of testing, in which one will enter into the application as one level of user and try to access the applciation beyond his limits inorder to check whether the aplication is allowing him to access or not. 
+
+Ad-hoc Testing : 
+
+It is type of testing in which one will check the application in their own style after understanding the requirements clearly. 
+
+TestCase : Is an idea of a test engineer to test something of an applicatino based on the requirements. 
+
+Types of Testcases : 
+
+  It is divided into 3 types as 
+
+  1) GUI Testcases
+
+  2) Functional Testcases
+
+       a) Positive Test Cases
+
+       b) Negative Test Cases 
+
+  3) Non-Functional Testcases 
+
+
+Guidelines for Preparing GUI Testcases : 
+_______________________________________
+
+1) Check for the availability of all the objects 
+
+2) Check for the consistency of all the objects
+
+3) Check for alignment of the objects if customer requirements are given
+
+4) Check for the spellings and grammer
+
+Guidelines for Writing Positive test cases : 
+____________________________________________
+
+1) A Test engineer should have positive Mindset 
+
+2) He should consider the positive flow of the application. 
+
+3) He should use the valid inputs from the point of functionality 
+
+Guidelines for Writing Negative Test cases : 
+____________________________________________
+
+1) Test engineer should have -ve mindset
+
+2) He should consider the -ve flow of application
+
+3) He sholuld use min. 1 invalid input for each set of data. 
+

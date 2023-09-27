@@ -1,0 +1,234 @@
+
+
+
+What is .NET
+
+Microsoft introduced .NET for bridging the gap between interoperability between applications. It is a foundation on which, where we can design, develop and deploy the applications. 
+
+Why .NET
+
+.NET a framework, that which contains more than 300+ language characterstics have been formed as a single group, where we can use one langauge features within another langauge. It is a foundation on which, where 
+we can build, design, develop and deploy the application. 
+
+Why .NET 
+
+Namespace : Contains group of related classes and interfaces that which belongs to one common group, if you want to overcome the naming conflicts between classes then we need the help of namespaces. 
+
+Components of .NET framework
+
+CLR (Common Language at Runtime) 
+
+	-> Debugging
+
+	-> Exception Handling
+
+	-> Security
+
+	-> Version Support
+
+MSIL (Microsoft Intermediate Language) 
+
+	When you compile any .NET application, at first instead of converting into
+CPU specific code, first its converted into MSIL. Then either exe or dll file will be 
+created, and it becomes language neutral. (Managed Code) 
+
+CTS (Common Type System) 
+
+     All .NET framework languages needs to undergone one common state w.r.t. Data Types
+and ranges. Example : if integer takes 4 bytes in C#, Vb.NET integer needs to take 4 bytes
+and Asp.net integer also needs to take 4 bytes. 
+
+CLS (Common Language Specification) 
+
+	The code which is there in one .NET framework language, can be used in another 
+.NET framework language known as Language Interoperability. 
+
+Compiling and Execution Procedure of .NET framework 
+
+1) When you compile any .NET application, at first instead of converting into CPU
+specific code, first its converted into MSIL 
+
+2) Either exe or dll file will be created 
+
+3) Then it would be sent to class loader 
+
+	There are 2 types of class loaders known as
+
+		(i) Primordial Class Loader : Used to load all system classes which 
+			are required to run the program.
+
+		(ii) Class Loader Objects :
+			Used to load all custom classes which are required to run 
+			the program. 
+
+4) In Class Loader, we have JIT Compiler, converts the bytecode into CPU specific format. 
+
+5) Then it would be send to execution manager, contains QUEUE of programs ready to run
+where we can execute the program. 
+
+*** Before execution, needs to undergone security authentication ***
+
+JIT (Just-In Time) : 
+
+Loads the classes which are required at runtime, as remaining classes it wont compile,
+that makes the execution faster. 
+
+Example : In you code you write 10 classes and in current context you are calling 
+4 classes in execution, then remaining classes not loaded into Memory, as performance
+improves . This is called JIT (Just-In Time) 
+
+
+Object Oriented Programming : 
+______________________________
+
+	It is an approach that provides a way of modularizing programming, that which can be used to 
+create small partition memory area for both data and objects, which are to be used as templates for creating
+copies of such modules on demand. 
+
+Object : An object is a real world entity, that which possess 3 characterstics known as
+
+		(i) State
+
+		(ii) Behaviour
+
+		(iii) Identity 
+
+
+OOPS features : 
+________________
+
+	(i) Encapsulation : Wrapping up of data and functions into a single unit known as encapsulation. 
+
+	(ii) Abstraction : Hiding the irrelevant details of an object, that do not contribute to its essential characterstics known as Abstraction. 
+
+		*** Encapsulation focuses on showing the relevant details,  where abstraction
+	focuses on hiding the irrelevant details. ***
+
+	(iii) Inheritance : Deriving a new entity from already existing entity known as 
+		inheritance, through inheritance we can reduce the size of the program. 
+
+	(iv) Polymorphism : The ability to take more than one form known as polymorphism. 
+
+class : A class is a template or blueprint, that which contains the combination of 
+data members and member functions. Members of the class can be accessable by using 
+instance of the class. 
+
+class class_name
+{
+    data members;
+    member functions;
+}
+
+Access Modifiers : 
+____________________
+
+	1) private : Allows you to access members within current class. 
+
+	2) public : Allows you to access members in entire application.
+
+	3) protected : Allows you to access members within current/derived class.
+
+	4) internal : Allows you to access members within all classes of current namespace.
+
+	5) protected internal : Allows you to access members within all classes of current namspace
+		and other namespace derived classes. 
+
+
+Console.WriteLine() : used to display any value or message. 
+
+Console.WriteLine("Welcome to Dotnet Programming...");
+
+Data Types : 
+_____________
+
+There are various types of data types as 
+
+1) Value Types
+
+	int, float, double, char, bool etc...		
+
+2) reference types
+
+	string, object and custom type 
+
+You can create an object to the class, as 
+
+class_name obj = new class_name();
+
+
+Console.ReadLine() : Used to read data from the keyboard. 
+
+It reads the data in string format, we need to convert to corresponding data types. 
+
+"12"
+
+12
+
+Control Structures : 
+______________________
+
+Used to define the flow of the program.
+
+There are 2 types of control structures known as
+
+	(i) Branching
+
+		if...else : 
+
+		Executes the statement(s) based on the condition. 
+
+		if (condition) {
+			statement(s);
+		} else {
+			statement(s);
+		}
+	
+	(ii) Looping 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
