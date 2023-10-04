@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+<h:form>
+		<h:selectOneMenu value="#{employDao.localCode}" onchange="submit()"
+	valueChangeListener="#{employDao.employLocaleCodeChanged}">
+    <f:selectItems value="#{employDao.getDepartments()}"/>
+</h:selectOneMenu>
+<h:outputLabel value="Selected Department is "/>
+<h:outputText value="#{employDao.localCode}"/>
+      <h:dataTable value="#{employDao.getEmployListByDept(employDao.localCode)}" var="e" border="3">
+        	    <h:column>
+                    <f:facet name="header">Employ No</f:facet>
+                    <h:outputText value="#{e.empno}"/>
+                </h:column>
+                    <h:column>
+                    <f:facet name="header">Employ Name</f:facet>
+                    <h:outputText value="#{e.name}"/>
+                </h:column>
+                    <h:column>
+                    <f:facet name="header">Employ Department</f:facet>
+                    <h:outputText value="#{e.dept}"/>
+                </h:column>
+                    <h:column>
+                    <f:facet name="header">Employ Designation</f:facet>
+                    <h:outputText value="#{e.desig}"/>
+                </h:column>
+                    <h:column>
+                    <f:facet name="header">Employ Basic</f:facet>
+                    <h:outputText value="#{e.basic}"/>
+                </h:column>
+                
+        </h:dataTable>
+	</h:form>
+</html>
