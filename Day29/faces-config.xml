@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<faces-config xmlns="http://java.sun.com/xml/ns/javaee" 
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+              xsi:schemaLocation="http://java.sun.com/xml/ns/javaee /WEB-INF/schema/web-facesconfig_2_0.xsd" 
+              version="2.0" metadata-complete="false">
+    <!-- This file must be present with our jar, even if it is empty.  Otherwise, our Java annotations won't get scanned! -->
+<managed-bean>
+	<managed-bean-name>loginController</managed-bean-name>
+    <managed-bean-class>com.java.jsf.LoginController</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+    <managed-property>
+            <property-name>login</property-name>
+            <property-class>com.java.jsf.Login</property-class>
+            <value>#{login}</value>
+        </managed-property>
+</managed-bean>
+
+<managed-bean>
+	<managed-bean-name>login</managed-bean-name>
+    <managed-bean-class>com.java.jsf.Login</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+</managed-bean>
+</faces-config>
