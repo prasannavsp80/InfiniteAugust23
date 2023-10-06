@@ -1,0 +1,58 @@
+FacesContext contains all of the per-request state information related to the processing of a single JavaServer Faces request, and the rendering of the corresponding response. It is passed to, and potentially modified by, each phase of the request processing lifecycle.
+
+JSF defines the javax.faces.context.FacesContext abstract base class for representing all of the contextual information associated with processing an incoming request, and creating the corresponding response.
+
+A FacesContext instance is created by the JSF implementation, prior to beginning the request processing lifecycle, by a call to the getFacesContext method of FacesContextFactory, as described in Section 6.6 “FacesContextFactory”.
+
+When the request processing lifecycle has been completed, the JSF implementation will call the release method, which gives JSF implementations the opportunity to release any acquired resources, as well as to pool and recycle FacesContext instances rather than creating new ones for each request.
+
+A new instance of FacesContext gets created with every new request. The main task of FacesContext is to provide all the information regarding the particular request with which it is associated. For example : to add messages after certain validation or conversion failure, you can simply add the message to the FacesContext which ultimately displays the desired message on the screen. Also you can take a look and even stop the JSF lifecycle at any point by calling
+
+    FacesContext.responseComplete();
+
+____________________________________________________________
+
+Each JSF application needs a faces-config. xml configuration file. It describes the application properties, such as navigation rules between the JSF pages, default bean instances, default values of some variables, message bundles, and so on.
+
+____________________________________________________________
+
+The Faces configuration file lists the bean resources, validators, navigation rules, and other elements for a JSF application. Metadata settings in the faces-config file override any annotations in your application.
+
+Managed Bean
+
+The managed bean element defines the managed beans that are dynamically instantiated at runtime if they are referenced as the first element of a value binding expression, and no corresponding bean is identified in any scope.
+Specify the bean name, class, the scope in which to store the bean instance, and whether to instantiate the bean on application startup.
+
+List Entries
+Represents a set of initialization elements that are used to populate a managed property that is a list or an array. In the Value class field, specify a fully qualified class name of an object that all values are converted to before they are added to a list in the list entries element.
+Null Value
+Adding a null value to this element initialize a property that is enclosed in this element to null.
+Value
+Specify the value or expression that generates a value for this element.
+Managed Property
+Represents a individual property of a managed bean that is configured to the specified value, if the corresponding managed bean is automatically created. Specify the property name and class.
+Map Entries
+Represents a set of key-value pairs that are added to the value of a managed property of a java.util.Map type.
+In the Key class field, specify a fully qualified class of an object type to which all keys in this list of map entries are converted to.
+In the Value class field, specify a fully qualified class name of an object that all values are converted to before they are added to a map in the map entries element.
+To add entries to the list, click Add.
+In the Key field, enter a String representation of a map key that is in a managed property of a java.util.Map type.
+In the Value section, enter the value or expression that generates a value for this element in the Value field, or select the Null radio button to specify that a property that is enclosed in this element is initialized to null.
+Navigation Rule
+Last Updated: 2021-03-03
+
+The navigation rule element sets rules to make decisions on which view to display next.
+
+In the From page field, specify the page to navigate from. If you leave this field blank, the navigation rule applies to all views.
+
+Navigation Case
+Defines a set of conditions that must be met before the case is executed and which view to proceed to next.
+From outcome Specify a string that the navigation handler compares with the output of the From action element or the action attribute of a UI component.
+From action: Specify an action method that returns a string that indicates if the action method is successful. Use From outcome and From action together to define dynamic navigation.
+If this expression is true (JSF 2.0 only) : Specify an EL expression that evaluates to true or false to define conditional navigation.
+Go to page: Specify the page that the user is directed to if the From action and From outcome match.
+Redirect
+Triggers a new HTTP request for the view instead of rendering the response without a separate HTTP request. Click the Add view parameter to add a view parameter.
+View Parameter (JSF 2.0 only)
+View parameters make it possible for incoming request parameters to be handled on GET requests.
+Specify the name and value of the view parameters. These parameters are included in the generated URL when your page uses an <f:viewParam> tag. When you declare a view parameter in the Faces configuration file, you can use EL expressions.
