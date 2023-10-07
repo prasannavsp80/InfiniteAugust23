@@ -1,0 +1,18 @@
+1) What is class
+2) What are oops features
+3) What is JVM architecture
+4) What is boxing and Unboxing
+5) What is method overloading
+6) What is the top level class
+7) If you don't specify constructor from how it gets default constructor
+8) What are the rules for constructor and constructor overloading
+9) What is inheritance
+10) What is static variable
+11) What is Abstract class and interface
+12) Will interface contains variables ???
+13) What is diamond problem
+14) What is Exception handling
+15) Hierarchy of exceptions
+16) What are exception blocks
+17) Difference between throw and throws
+18) How to create custom exception
