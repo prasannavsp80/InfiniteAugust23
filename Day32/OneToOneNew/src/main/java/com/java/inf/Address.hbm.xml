@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 09-Oct-2023, 8:41:25 am by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+	<class name="com.java.inf.Address" table="AddressHib1">
+		 <id name="addressId">  
+          	<generator class="foreign">  
+          		<param name="property">employee</param>  
+          	</generator>  
+          </id>  
+       <property name="addressLine1" type="java.lang.String">
+            <column name="ADDRESSLINE1" />
+        </property>
+        <property name="city" type="java.lang.String">
+            <column name="CITY" />
+        </property>
+        <property name="state" type="java.lang.String">
+            <column name="STATE" />
+        </property>
+        <property name="country" type="java.lang.String">
+            <column name="COUNTRY" />
+        </property>
+        <property name="pincode" type="int">
+            <column name="PINCODE" />
+        </property>
+        <one-to-one name="employee" class="com.java.inf.Employee"></one-to-one>
+	</class>
+</hibernate-mapping>
