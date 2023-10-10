@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+	<p>
+		Welcome to Customer Menu Page...
+	</p>
+	<p>
+Welcome to <b>
+	
+		<h:outputLabel value="#{customerInfo.custName}"/>
+
+</b>
+</p>
+	
+	<h:commandLink id="image-link-id" action="CustomerInfo.xhtml">  
+<h:outputText value="Customer Info"></h:outputText>  
+</h:commandLink>  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+
+	<h:commandLink id="image_link_emp" action="CustomerWallet.xhtml">  
+<h:outputText value="Show Customer Wallets"/>  
+</h:commandLink>  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+
+	<h:commandLink id="image_link_rest" action="ShowRestaurant.xhtml">  
+<h:outputText value="Show Restaurants"/>  
+</h:commandLink>  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+
+
+	<h:commandLink id="image_link_restMenu" action="RestaurantMenu.xhtml">  
+<h:outputText value="Show Menu"/>  
+</h:commandLink>  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+
+<h:commandLink id="image_link_emps" action="PlaceOrder.xhtml">
+<h:outputText value="Place Order"/>  
+</h:commandLink>
+<hr/>
+	</html>

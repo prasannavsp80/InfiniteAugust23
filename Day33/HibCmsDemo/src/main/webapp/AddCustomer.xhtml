@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+
+</h:head>
+<h:body>
+	<f:facet name="last">
+	  <h:outputStylesheet library="default" name="css/style.css" />
+	</f:facet>
+
+	<h1>Customer Account Creation</h1>
+	<div style="width: 500px">
+	<h:form>
+	  <p:panel id="panel-signup">
+          <!-- enable focus component -->
+	  <p:focus context="panel-signup" />
+
+	  <p:inputText id="customerName" required="true" 
+	  	label="Please Enter Customer Name"
+		size="40" requiredMessage="Please enter Customer name."
+		value="#{customer.custName}">
+	  </p:inputText>
+	  <p:watermark for="customerName" value="customerName *" />
+	  <p:message for="customerName" />
+
+	  <p:inputText id="customerPhoneNo" required="true" 
+	  	label="Please Enter Customer Phone No"
+		size="40" requiredMessage="Please enter Customer Phone."
+		value="#{customer.custPhoneNo}">
+	  </p:inputText>
+	  <p:watermark for="customerPhoneNo" value="customerPhoneNo *" />
+	  <p:message for="customerPhoneNo" />
+
+	 <p:inputText id="customerEmail" required="true" 
+	  	label="Please Enter Customer Email"
+		size="40" requiredMessage="Please enter Customer Email."
+		value="#{customer.custEmail}">
+	  </p:inputText>
+	  <p:watermark for="customerEmail" value="customerEmail *" />
+	  <p:message for="customerEmail" />
+
+
+	  <p:inputText id="username" required="true" label="Please Enter UserName"
+		size="40" requiredMessage="Please enter your username."
+		value="#{customer.custUserName}">
+	  </p:inputText>
+	  <p:watermark for="username" value="Username *" />
+	  <p:message for="username" />
+
+	  <p:password id="password" required="true" label="password" size="40"
+		requiredMessage="Please enter your password."
+		match="confirmPassword" value="#{customer.custPassword}"
+		maxlength="20">
+	  </p:password>
+		<p:watermark for="password" value="Password *" />
+		<p:message for="password" />
+
+	  <p:password id="confirmPassword" required="true" size="40"
+		requiredMessage="Please confirm your password."
+		label="confirmPassword" value="#{confirmPassword}"
+		maxlength="20">
+	  </p:password>
+	  <p:watermark for="confirmPassword" value="Type Password Again *" />
+	  <p:message for="confirmPassword" />
+	  <p:commandButton value="Create Account" style="margin:20px"
+		action="#{cDao.addCustomerDao(customer)}" ajax="false" />
+	  </p:panel>
+	</h:form>
+	</div>
+</h:body>
+</html>

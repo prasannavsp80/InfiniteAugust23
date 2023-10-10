@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+<h:form>
+		<ui:include src="/CustomerMenu.xhtml" />
+				<center>
+         	<h:selectOneMenu value="#{rDao.localCode}" onchange="submit()"
+	valueChangeListener="#{rDao.restaurantLocaleCodeChanged}">
+    <f:selectItems value="#{rDao.showRestaurantNames()}"/>
+</h:selectOneMenu>
+Selected value is : 
+<h:outputText value="#{rDao.restaurantId}"/>
+         
+<h:dataTable value="#{menuDao.showMenuByRestaurant(rDao.restaurantId)}" 
+        		var="e" border="3">
+        	    <h:column>
+                    <f:facet name="header">Menu Id</f:facet>
+                    <h:outputText value="#{e.menuId}"/>
+                </h:column>
+                  <h:column>
+                    <f:facet name="header">Item Name</f:facet>
+                    <h:outputText value="#{e.menuItem}"/>
+                </h:column>
+                  <h:column>
+                    <f:facet name="header">Item Price</f:facet>
+                    <h:outputText value="#{e.menuPrice}"/>
+                </h:column>
+                  <h:column>
+                    <f:facet name="header">Calories</f:facet>
+                    <h:outputText value="#{e.calories}"/>
+                </h:column>
+                  <h:column>
+                    <f:facet name="header">Speciality</f:facet>
+                    <h:outputText value="#{e.menuSpeciality}"/>
+                </h:column>
+        </h:dataTable>
+            </center>
+</h:form>
+</html>

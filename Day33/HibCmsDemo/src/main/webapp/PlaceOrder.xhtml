@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+
+<h:form>
+		<ui:include src="/CustomerMenu.xhtml" />
+				<center>
+                <h2><h:outputText value="Place Order"/></h2>
+       Customer Id : 
+        	  <h:inputText id="customerId" 
+	  	label="Please Enter Customer Id"
+		value="#{customerInfo.custId}">
+	  </h:inputText> <br/><br/>
+       Restaurant Name : 
+               	<h:selectOneMenu value="#{rDao.localCode}" onchange="submit()"
+	valueChangeListener="#{rDao.restaurantLocaleCodeChanged}">
+    <f:selectItems value="#{rDao.showRestaurantNames()}"/>
+</h:selectOneMenu>
+Selected value is : 
+<h:outputText value="#{rDao.restaurantId}"/>
+<br/><br/>
+	Menu Items : 
+              	<h:selectOneMenu value="#{menuDao.localCode}" onchange="submit()"
+	valueChangeListener="#{menuDao.menuLocaleCodeChanged}">
+    <f:selectItems value="#{menuDao.showMenuItemNames(rDao.restaurantId)}"/>
+</h:selectOneMenu>
+<h:outputText value="#{menuDao.menuId}"/>
+	<br/><br/>
+Price : 
+        	  <h:outputText id="menuPrice" 
+	  	label="Please Enter Customer Id"
+		value="#{menuDao.price}">
+	  </h:outputText> <br/><br/>
+Vendor Names : 
+               	<h:selectOneMenu value="#{vDao.localCode}" 
+               	onchange="submit()"
+	valueChangeListener="#{vDao.restaurantLocaleCodeChanged}">
+    <f:selectItems value="#{vDao.showVendorNamesDao()}"/>
+</h:selectOneMenu>
+<h:outputText value="#{vDao.vid}"/>
+
+	<br/><br/>
+Select Wallet Source : 
+<h:selectOneMenu value="#{wdao.localCode}" 
+               	onchange="submit()"
+	valueChangeListener="#{wdao.restaurantLocaleCodeChanged}">
+    <f:selectItems value="#{wdao.showCustomerWalletNames(customerInfo.custId)}"/>
+</h:selectOneMenu>
+
+ 	<h:outputLabel value="#{wdao.localCode}"/> <br/><br/>
+ Order Quantity : 
+       	  <h:inputText id="qtyOrd" 
+	  	label="Please Enter Order Quantity"
+		value="#{qtyOrd}">
+  </h:inputText> <br/><br/> 
+  Order Comments : 
+      	  <h:inputText id="orderComments" 
+	  	label="Please Enter Order Comments"
+		value="#{orderComments}">
+</h:inputText>  <br/> <Br/>
+<h:commandButton value="Place Order" action="#{oDao.placeOrder(customerInfo.custId,vDao.vid,menuDao.menuId,wdao.localCode,qtyOrd,orderComments)}"/>
+</center>
+</h:form>
+</html>
