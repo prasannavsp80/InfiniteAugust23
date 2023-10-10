@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 04-Oct-2023, 2:50:15 pm by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.java.jsf.Login" table="LOGIN">
+        <id name="userName" type="java.lang.String">
+            <column name="USERNAME" />
+            <generator class="assigned" />
+        </id>
+        <property name="passCode" type="java.lang.String">
+            <column name="PASSCODE" />
+        </property>
+    </class>
+    <query name="authenticate">
+    	from Login where userName=:userName AND passCode=:passCode
+    </query>
+</hibernate-mapping>

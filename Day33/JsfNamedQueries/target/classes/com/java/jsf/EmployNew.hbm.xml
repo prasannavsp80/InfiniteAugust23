@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 04-Oct-2023, 9:34:49 am by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.java.jsf.EmployNew" table="EMPLOY">
+        <id name="empno" type="int">
+            <column name="EMPNO" />
+            <generator class="assigned" />
+        </id>
+        <property name="name" type="java.lang.String">
+            <column name="NAME" />
+        </property>
+        <property name="gender">
+            <column name="GENDER" />
+            <type name="org.hibernate.type.EnumType">
+                <param name="enumClass">com.java.jsf.Gender</param>
+                <param name="type">12</param>
+            </type>
+        </property>
+        <property name="dept" type="java.lang.String">
+            <column name="DEPT" />
+        </property>
+        <property name="desig" type="java.lang.String">
+            <column name="DESIG" />
+        </property>
+        <property name="basic" type="double">
+            <column name="BASIC" />
+        </property>
+    </class>
+    <query name="showEmploy">
+            from EmployNew
+    </query>
+    <query name="searchEmploy">
+            from Employ where empno=:empno
+    </query>
+    
+</hibernate-mapping>
