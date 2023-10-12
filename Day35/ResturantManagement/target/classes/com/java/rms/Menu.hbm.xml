@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated Oct 5, 2023, 4:57:36 PM by Hibernate Tools 3.6.2.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class dynamic-insert="false" dynamic-update="false" mutable="true" name="com.java.rms.Menu" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="MENU">
+        <id name="menid" type="int">
+            <column name="MEN_ID"/>
+            <generator class="assigned"/>
+        </id>
+        <property generated="never" lazy="false" name="menitem" optimistic-lock="true" type="java.lang.String" unique="false">
+            <column name="MEN_ITEM"/>
+        </property>
+        <property generated="never" lazy="false" name="menprice" optimistic-lock="true" type="double" unique="false">
+            <column name="MEN_PRICE"/>
+        </property>
+        <property generated="never" lazy="false" name="restaurantid" optimistic-lock="true" type="int" unique="false">
+            <column name="Restaurant_ID"/>
+        </property>
+        <property generated="never" lazy="false" name="mencalories" optimistic-lock="true" type="double" unique="false">
+            <column name="MEN_CALORIES"/>
+        </property>
+        <property generated="never" lazy="false" name="menspeciality" optimistic-lock="true" type="java.lang.String" unique="false">
+            <column name="MEN_SPECIALITY"/>
+        </property>
+    </class>
+</hibernate-mapping>

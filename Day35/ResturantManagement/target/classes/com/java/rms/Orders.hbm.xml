@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated Oct 11, 2023, 10:26:59 PM by Hibernate Tools 3.6.2.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class dynamic-insert="false" dynamic-update="false" mutable="true" name="com.java.rms.Orders" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="ORDERS">
+        <id name="cusid" type="int">
+            <column name="CUS_ID"/>
+            <generator class="assigned"/>
+        </id>
+        <property generated="never" lazy="false" name="ordid" optimistic-lock="true" type="int" unique="false">
+            <column name="ORD_ID"/>
+        </property>
+        <property generated="never" lazy="false" name="venid" optimistic-lock="true" type="int" unique="false">
+            <column name="VEN_ID"/>
+        </property>
+        <property generated="never" lazy="false" name="walsource" optimistic-lock="true" type="java.lang.String" unique="false">
+            <column name="WAL_SOURCE"/>
+        </property>
+        <property generated="never" lazy="false" name="menid" optimistic-lock="true" type="int" unique="false">
+            <column name="MEN_ID"/>
+        </property>
+        <property generated="never" lazy="false" name="orddate" optimistic-lock="true" type="java.sql.Date" unique="false">
+            <column name="ORD_DATE"/>
+        </property>
+        <property generated="never" lazy="false" name="ordquantity" optimistic-lock="true" type="int" unique="false">
+            <column name="ORD_QUANTITY"/>
+        </property>
+        <property generated="never" lazy="false" name="ordbillamount" optimistic-lock="true" type="double" unique="false">
+            <column name="ORD_BILLAMOUNT"/>
+        </property>
+        <property generated="never" lazy="false" name="ordstatus" optimistic-lock="true" unique="false">
+            <column name="ORD_STATUS"/>
+            <type name="org.hibernate.type.EnumType">
+                <param name="enumClass">com.java.rms.Ordstatus</param>
+                <param name="type">12</param>
+            </type>
+        </property>
+        <property generated="never" lazy="false" name="ordcomments" optimistic-lock="true" type="java.lang.String" unique="false">
+            <column name="ORD_COMMENTS"/>
+        </property>
+    </class>
+</hibernate-mapping>
