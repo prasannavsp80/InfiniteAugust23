@@ -1,0 +1,20 @@
+The Java Naming and Directory Interface (JNDI) is a Java API for a directory service that allows Java software clients to discover and look up data and resources (in the form of Java objects) via a name. Like all Java APIs that interface with host systems, JNDI is independent of the underlying implementation.
+
+35
+
+JNDI is a very powerful mechanism for both organizing configuration information and discovering and listening to services via using the EventContext. In JNDI you can lookup and listen to any object (not just DataSources), assuming your JNDI service provider supports it.
+
+Of course, the only issue is actually having a JNDI service provider; the great thing about this is that it surprisingly easy to roll your own. After all you can encode any Java instance into XML using the JavaBeans XMLEncoder and XMLDecoder: you don't need to rely on running within an application server!
+
+So what is the difference between this an having configuration files? Well, it can be much cleaner because all of your applications can get their configuration from the same place. If they need to share configuration information (e.g. database locations) then this can be defined once in JNDI. Suppose you moved database servers: you don't need to remember the gazillion config files with the location in it. You just go to the one place: JNDI.
+
+The JNDI Properties of the Universal Test Client allows you to specify the Initial Factory and Provider URL to be used during the JNDI lookup. You can also specify additional JNDI properties.
+The JNDI Properties page contains the following fields:
+
+Initial Factory, a unique class provided by the application server used to communicate with the client. For example, the initial factory for WebSphere® Application Server is com.ibm.websphere.naming.WsnInitialContextFactory.
+Provider URL, specifies the host name (and optionally, the port number) for the name server. The provider URL must have the following form (where hostname is the remote name server's host name and port is the port number on which the remote name server is listening): iiop:// hostname:port/ To test enterprise beans running in a different installation of WebSphere Application Server, modify the Provider URL field with the IP address of the remote installation.
+User, specifies the user ID used to connect to the JNDI.
+Password, specifies the password to the user ID.
+
+A variation of the org.jnp.interfaces.NamingContextFactory InitialContextFactory implementation that maintains the last envrionment used to create an InitialContext in a thread local variable for access within the scope of the InitialContext. This can be used by the EJB handles to save the context that should be used to perform the looks when the handle is restored.
+

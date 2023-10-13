@@ -1,0 +1,133 @@
+EJB provides an architecture to develop and deploy component based enterprise applications considering robustness, high scalability, and high performance. An EJB application can be deployed on any of the application server compliant with the J2EE 1.3 standard specification.
+
+We'll be discussing EJB 3.0 in detail in this tutorial.
+
+Types
+EJB is primarily divided into three categories; following table lists their names with brief descriptions −
+
+S.No	Type & Description
+1	
+Session Bean
+
+Session bean stores data of a particular user for a single session. It can be stateful or stateless. It is less resource intensive as compared to entity bean. Session bean gets destroyed as soon as user session terminates.
+
+2	
+Entity Bean
+
+Entity beans represent persistent data storage. User data can be saved to database via entity beans and later on can be retrieved from the database in the entity bean.
+
+3	
+Message Driven Bean
+
+Message driven beans are used in context of JMS (Java Messaging Service). Message Driven Beans can consumes JMS messages from external entities and act accordingly.
+
+Benefits
+Following are the important benefits of EJB −
+
+Simplified development of large-scale enterprise level application.
+
+Application Server/EJB container provides most of the system level services like transaction handling, logging, load balancing, persistence mechanism, exception handling, and so on. Developer has to focus only on business logic of the application.
+
+EJB container manages life cycle of EJB instances, thus developer needs not to worry about when to create/delete EJB objects.
+
+A stateless session bean is a type of enterprise bean, which is normally used to perform independent operations. A stateless session bean as per its name does not have any associated client state, but it may preserve its instance state. EJB Container normally creates a pool of few stateless bean's objects and use these objects to process client's request. Because of pool, instance variable values are not guaranteed to be same across lookups/method calls.
+
+Steps to Create a Stateless EJB
+Following are the steps required to create a stateless EJB −
+
+Create a remote/local interface exposing the business methods.
+
+This interface will be used by the EJB client application.
+
+Use @Local annotation, if EJB client is in same environment where EJB session bean is to be deployed.
+
+Use @Remote annotation, if EJB client is in different environment where EJB session bean is to be deployed.
+
+Create a stateless session bean, implementing the above interface.
+
+Use @Stateless annotation to signify it a stateless bean. EJB Container automatically creates the relevant configurations or interfaces required by reading this annotation during deployment.
+
+Remote Interface
+import javax.ejb.Remote;
+ 
+@Remote
+public interface LibrarySessionBeanRemote {
+   //add business method declarations
+}
+Stateless EJB
+@Stateless
+public class LibrarySessionBean implements LibrarySessionBeanRemote {
+   //implement business method 
+}
+Example Application
+Let us create a test EJB application to test stateless EJB.
+
+Step	Description
+1	
+Create a project with a name EjbComponent under a package com.tutorialspoint.stateless as explained in the EJB - Create Application chapter. You can also use the project created in EJB - Create Application chapter as such for this chapter to understand stateless EJB concepts.
+
+2	
+Create LibrarySessionBean.java and LibrarySessionBeanRemote as explained in the EJB - Create Application chapter. Keep rest of the files unchanged.
+
+3	
+Clean and Build the application to make sure business logic is working as per the requirements.
+
+4	
+Finally, deploy the application in the form of jar file on JBoss Application Server. JBoss Application server will get started automatically if it is not started yet.
+
+5	
+Now create the EJB client, a console based application in the same way as explained in the EJB - Create Application chapter under topic Create Client to access EJB.
+
+1. The LifeCycle of EJB
+The various stages through which an enterprise bean go through its lifetime is known as the life cycle of EJB. Each type of enterprise bean (stateful session, stateless session, singleton session, or message-driven) has a different lifecycle.
+
+2. Life Cycle of a Stateful Session Bean
+The following figure shows the life cycle of a stateful session bean. It has the following states:
+
+Does not exist. In this state, the bean instance simply does not exist.
+Ready state. A bean instance in the ready state is tied to particular client and engaged in a conversation.
+Passive state. A bean instance in the passive state is passivated to conserve resource.
+The various state transitions as well as the methods available during the various states are discussed below.
+
+Life Cycle of a Stateful Session Bean
+Life Cycle of a Stateful Session Bean
+2.1 Moving from the Does Not Exist to the Ready State
+When a client invokes a create method on a stateful session bean, the EJB container creates a new instance and invokes the callback method public void setSessionContext(SessionContext ctx). This method has the parameter javax.ejb.SessionContext, which contains a reference to the session context, that is, the interface to the EJB container, and can be used to self-reference the session bean object.
+
+After the callback method setSessionContext is called, the EJB container calls the callback method ejbCreate that matches the signature of the create method.
+
+2.2 The Ready State
+A stateful bean instance in the ready state is tied to a particular client for the duration of their conversation. During this conversation the instance can the execute component methods invoked by the client.
+
+2.3 Activation and Passivation
+To more optimally manage resources, the EJB container might passivate an inactive stateful session bean instance by moving it from the ready state to the passive state. When a session bean instance is passivated, its (non-transient) data is serialized and written to disk, after which the bean instance is purged from memory. Just prior to serialization, the callback method ejbPassivate is invoked. If your session bean needs to execute some custom logic prior to passivation, you can implement it using this callback method.
+
+ADVERTISEMENT
+
+If after passivation a client application continues the conversation by invoking a business method, the passivated bean instance is reactivated; its data stored on disk is used to restore the bean instance state. Right after the state has been restored, the callback method ejbActivateis invoked. If your session bean needs to execute some custom logic after activation, you can implement it using this callback method. The caller (a client application or another EJB) of the session bean instance will be unaware of passivation (and reactivation) having taken place.
+
+If a stateful session bean is set up to use the NRU(not recently used) cache-type algorithm, the session bean can time out while in passivated state. When this happens, it moves to the does not exist state; that is, it is removed. Prior to removal the EJB container will call the callback method ejbRemove. If a stateful session bean is set up to use the LRU (least recently used) algorithm, it cannot time out while in passivated state. Instead this session bean is always moved from the ready state to the passivated state when it times out.
+
+The exact timeout can be set using the idleTimeoutSeconds attribute on the @Session annotation. The cache-type algorithm can be set using the attribute on the same annotation.
+
+2.4 Moving from the Ready to the Does Not Exist State
+When a client application invokes a remove method on the stateful session bean, it terminates the conversation and tells the EJB container to remove the instance. Just prior to deleting the instance, the EJB container will call the callback method ejbRemove. If your session bean needs to execute some custom logic prior to deletion, you can implement it using this callback method.
+
+An inactive stateful session bean that is set up to use the NRU (not recently used) cache-type algorithm can time out, which moves it to the does not exist state, that is, it is removed. Prior to removal the EJB container
+will call the callback method ejbRemove. If a stateful session bean set up to use the LRU (least recently used) algorithm times out, it always moves to the passivated state, and is not removed.
+
+The exact timeout can be set using the idleTimeoutSeconds attribute on the @Session annotation. The cache-type algorithm can be set using the cacheType attribute on the same annotation.
+
+3. The Lifecycle of a Stateless Session Bean
+The following figure shows the life cycle of a stateless session bean. A stateless session bean has two states:
+
+Does not exist. In this state, the bean instance simply does not exist.
+Ready state. When WebLogic Server is first started, several bean instances are created and placed in the Ready pool. More instances might be created by the container as needed by the EJB container.
+
+The various state transitions as well as the methods available during the various states are discussed below.
+
+SLSBLifeCycle1
+Life Cycle of a Stateless Session Bean
+3.1 Moving from the Does Not Exist to the Ready State
+When the EJB container creates a stateless session bean instance to be placed in the ready pool, it calls the callback method public void setSessionContext(SessionContext ctx). This method has the parameter javax.ejb.SessionContext, which contains a reference to the session context, that is, the interface to the EJB container, and can be used to self-reference the session bean object.
+
