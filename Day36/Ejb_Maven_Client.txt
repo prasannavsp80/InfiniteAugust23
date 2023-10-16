@@ -1,0 +1,13 @@
+<dependency>
+    <groupId>javax</groupId>
+    <artifactId>javaee-api</artifactId>
+    <version>7.0</version>
+    <scope>provided</scope>
+</dependency>
+<!-- https://mvnrepository.com/artifact/org.wildfly/wildfly-ejb-client-bom -->
+<dependency>
+    <groupId>org.wildfly</groupId>
+    <artifactId>wildfly-ejb-client-bom</artifactId>
+    <version>26.1.1.Final</version>
+    <type>pom</type>
+</dependency>
