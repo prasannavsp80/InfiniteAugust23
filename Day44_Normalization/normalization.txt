@@ -1,0 +1,79 @@
+Project(Ecode,Ename,Gender,DeptCode,DeptName,ProjCode,Hours) 
+
+E001,Sagar,Male,D001,Java,{P001,6,P002,12,P003,18,P001,8}
+
+First Normal Form : 
+
+A table is said to be in the 1NF when each cell of the table contains precisely one value (Atomic Value). 
+
+By applying 1NF
+
+E001,Sagar,Male,D001,Java,P001,6
+E001,Sagar,Male,D001,Java,P002,12
+E001,Sagar,Male,D001,Java,P003,18
+E001,Sagar,Male,D001,Java,P001,8,
+
+This situation could lead to the following problems : 
+
+1) Insertion : The department of the particular employee cannot be recorded until the employee is assigned a project. 
+
+2) Updation : The Employee Code, Department Name, and department Code are repeated several times, if an employee is transferred to another dept. this change will have to be recorded in every row of the EMPLOYEE table pertaining to that employee. 
+
+3) Deletion : When an employee completes work on the project, the employee's record to be deleted. The info. regarding the department to which the emplyee belongs will also to be lost. 
+
+*** 1NF is inadequate so we need to move to 2NF ***
+
+Second Normal Form : A table is said to be in 2NF, when it is in 1NF and every attribute in the row is functionally dependent upon the whole key, and not just part of the key. 
+
+Guidelines : 
+
+-> Find and remove attributes that are functionally dependent on only a part of the key and not on the whole key. 
+-> Group the remaining attributes. 
+
+Project(Ecode,Ename,Gender,DeptCode,DeptName,ProjCode,Hours) 
+
+
+Ecode -> Ename (y) 
+Ecode -> Gender (y) 
+Ecode -> DeptCode (y) 
+Ecode -> DeptName (y) 
+Ecode -> ProjCode (n)
+Ecode -> Hours (n) 
+
+By Applying 2NF 
+Employee(Ecode+,Ename,Gender,DeptCode,DeptName)
+Project(ProjCode,Ecode-,Hours)
+
+1) Insertion : The DeptName of a new dept that does not have any employees at the present cannot be entered in the DeptName column. 
+
+2) Updation : the DeptName is repeated several times, hence if a employee moves to another dept, the change will have to be made consistently across the table. 
+
+3) Deletion : If the record of the employee is deleted, then the information regarding the head of the dept will also to be deleted. Hence there will be a loss of information.
+
+2NF is inadequate as we need to move to 3NF
+
+Third Normal Form : A table is said to be in the 3NF, when it is in the 2NF and every attribute needs to depend functionally on whole key but not transitively (No transitive dependency) 
+
+Guidelines for Converting a Table to 3NF : 
+
+-> Find and remove  attributes that are transitively dependent on  the primary key and place them in different table. 
+
+-> Group the remaining attributes. 
+
+By Applying 3NF 
+
+Department(DeptCode+,Deptname)
+Employ(Ecode+,DeptCode,Ename,Gender) 
+Project(ProjCode,Ecode,Hours)
+
+__________________________________________________________
+
+EmployeeData(Ecode,Ename,Dob,Gender,ManagerCode,LeaveAvail,
+leaveid,LeaveStartDate,LeaveEndDate,noOfDays,leaveReason,managerComments,Dept,Desig,EmployType)
+
+
+
+
+
+
+
