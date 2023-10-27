@@ -1,0 +1,16 @@
+Patient_Report
+   Report_Id
+   Patient_Id
+   TestCode
+   TestName
+   TestDescription
+   Cost
+   Comments
+
+Validations : 
+
+Report_Id auto increment
+Patient_id foreign key
+TestCode starts with T
+TestName min 5 chars
+Cost >= 50
