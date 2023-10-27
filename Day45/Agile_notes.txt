@@ -1,0 +1,203 @@
+SDLC 
+
+   Software Development Life Cycle 
+
+	Requirements 
+
+	Feasibility
+
+	Analysis
+	
+	Design 
+
+	Coding 
+
+	Testing 
+
+	Review/Maintenance 
+
+Waterfall Model : 
+
+-> All the requirements needs to be defined at first
+
+-> No new requirements or changes to be added in the middle 
+
+-> You cannot review the product till end, then there may be some strange results 
+
+-> Whenever we dont have strict timelines then we need to proceed for waterfall model 
+
+V Model 
+
+Validation & Verification 
+
+
+______________________________________________________________________________________
+
+
+
+Scrum Master 
+
+
+	Daily Standup 
+
+	o	Daily stand-ups,
+	o	Planned meetings,
+	o	Demo,
+	o	Review,
+	
+
+Product Owner
+
+A Product Owner is the one who drives the product from business perspective. The responsibilities or a Product Owner are as follows −
+
+	•	To define the requirements and prioritize their values.
+	•	To determine the release date and contents.
+	•	To take an active role in iteration planning and release planning meetings.
+•	To ensure that team is working on the most valued requirement.
+•	To represent the voice of the customer.
+•	To accept the user stories that meet the definition of done and defined acceptance criteria.
+
+What is a User Story?
+A user story is a requirement which defines what is required by the user as functionality. A user story can be in two forms −
+•	As a <User Role> I want <Functionality> so that <Business Value>
+•	In order to <Business value> as a <User Role> I want <Functionality>
+		During release planning, a rough estimate is given to a user story using relative scale as 			points. During iteration planning, the story is broken down into tasks.
+
+
+•	User story talks about what is to be done. It defines what a user needs.
+•	Task talks about how it is to be done. It defines how a functionality is to be implemented.
+•	Stories are implemented by tasks. Each story is a collection of tasks.
+•	User story is divided into tasks when it is planned in current iteration.
+•	Tasks are estimated in hours, typically from 2 to 12 hours.
+•	Stories are validated using acceptance tests.
+
+When a Story is Done
+The team decides what done means. The criteria may be −
+•	All tasks (development, testing) are completed.
+•	All acceptance tests are running and are passed.
+•	No defect is open.
+•	Product owner has accepted the story.
+•	Deliverable to the end-user.
+
+
+What is Acceptance Criteria?
+
+Criteria defines the functionality, behavior, and performance required by a feature so that it can be accepted by the product owner. It defines what is to be done so that the developer knows when a user story is complete.
+
+
+What is sprint : 
+
+Each iteration in agile process known as sprint. 
+
+Spring iteration review to be happend atleast once in a week
+
+compulsory one time in 4 weeks. 
+
+Twelve Principles of Agile Manifesto
+•	Customer Satisfaction − Highest priority is given to satisfy the requirements of customers through early and continuous delivery of valuable software.
+
+•	Welcome Change − Changes are inevitable during software development. Ever-changing requirements should be welcome, even late in the development phase. Agile processes should work to increase customers' competitive advantage.
+
+•	Deliver a Working Software − Deliver a working software frequently, ranging from a few weeks to a few months, considering shorter time-scale.
+
+•	Collaboration − Business people and developers must work together during the entire life of a project.
+
+•	Motivation − Projects should be built around motivated individuals. Provide an environment to support individual team members and trust them so as to make them feel responsible to get the job done.
+
+•	Face-to-face Conversation − Face-to-face conversation is the most efficient and effective method of conveying information to and within a development team.
+
+•	Measure the Progress as per the Working Software − Working software is the key and it should be the primary measure of progress.
+
+•	Maintain Constant Pace − Agile processes aim towards sustainable development. The business, the developers, and the users should be able to maintain a constant pace with the project.
+
+•	Monitoring − Pay regular attention to technical excellence and good design to enhance agility.
+
+•	Simplicity − Keep things simple and use simple terms to measure the work that is not completed.
+
+•	Self-organized Teams − An agile team should be self-organized and should not depend heavily on other teams because the best architectures, requirements, and designs emerge from self-organized teams.
+
+•	Review the Work Regularly − Review the work done at regular intervals so that the team can reflect on how to become more effective and adjust its behavior accordingly.
+
+
+Validation always goes with product
+
+Verification always goes with process
+
+What is Daily Stand-up?
+•	A daily stand-up is a daily status meeting among all team members and it is held roughly for 15 minutes.
+•	Every member has to answer three important questions −
+o	What I did yesterday?
+o	What I'll do today?
+o	Any impediment I am facing.../ I am blocked due to...
+•	Daily stand-up is for status update, not for any discussion. For discussion, team members should schedule another meeting at a different time.
+•	Participants usually stand instead of sitting so that the meeting gets over quickly.
+
+•	The team can evaluate the progress on a daily basis and see if they can deliver as per the iteration plan.
+•	Each team member informs all about his/ her commitments for the day.
+•	It provides visibility to the team on any delay or obstacles.
+
+User Story
+A user story is a requirement which is formulated in a few sentences in everyday language of an user and it should be completed within an iteration. A user story is done when
+•	All the related code have been checked-in.
+•	All the unit test cases have been passed.
+•	All the acceptance test cases have been passed.
+•	Help text is written.
+•	Product Owner has accepted the story.
+
+An iteration is also termed as a sprint. An iteration is done when
+•	Product backup is complete.
+•	Performance has been tested.
+•	User stories have been accepted or moved to the next iteration.
+•	Defects have been fixed or postponed to the next iteration.
+
+Once sprint created, it will not be modified in the middle, 
+
+new requirements to be added to the next sprint only. 
+
+A release is a major milestone that represents an internal or external delivery of working, tested version of the product/system. A release is done when
+
+•	System is stress tested.
+•	Performance is tuned.
+•	Security validations are carried out.
+•	Disaster recovery plan is tested.
+
+The purpose of release planning is to create a plan to deliver an increment to the product. It is done after every 2 to 3 months.
+
+Who is Involved?
+•	Scrum Master − The scrum master acts as a facilitator for the agile delivery team.
+•	Product Owner − The product owner represents the general view of the product backlog.
+•	Agile Team − Agile delivery team provides insights on the technical feasibilities or any dependencies.
+•	Stakeholders − Stakeholders like customers, progWho is Involved?
+•	Scrum Master − The scrum master acts as a facilitator for the agile delivery team.
+•	Product Owner − The product owner deals with the detailed view of the product backlog and their acceptance criteria.
+•	Agile Team − Agile delivery defines their tasks and sets the effort estimates required to fulfil the commitment.
+ram managers, subject matter experts act as advisers as decisions are made around the release planning.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	

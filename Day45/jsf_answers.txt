@@ -1,0 +1,214 @@
+1. Which JSF tag is used to render plain text?
+
+a) <h:inputsecret>
+b) <h:inputText>
+c) <h:outputText> (c)
+d) None
+
+2. An input form is represented by the ____ tag.
+
+a) <h:form> (a)
+b) <h:inputform>
+c) <h:outputform>
+d) None 
+
+3. Which of the following tag generates a submit button, which is then used to submit an application form?
+
+a) <h:formButton>
+b) <h:formsubmitButton>
+c) <h:formcommandButton>
+d) <h:commandButton> (d)
+
+4. Which tag in JSF converts it as an HTML "a" anchor element that, when clicked, works as a form submit button?
+
+a) <h:commandLink> (a)
+b) <h:aLink>
+c) <h:anchor>
+d) None
+
+5) Which of the following tag displays a single message for a certain component?
+
+a) <h:msg>
+b) <h:message> (b)
+c) <h:messages>
+d) <h:outputmessage>
+
+6. When the value of a component changes, ____ events are triggered.
+
+a) Action events
+b) Value change events (b)
+c) Component events
+d) System events
+
+7) Which of the following tags is used to turn user input into a date?
+
+a) <f:convertDateTime> (a)
+b) <f:convertDate>
+c) <f:convertTime>
+d) <f:DateTime>
+
+8) What is FacesContext in JSF
+
+a) JSF defines the javax.faces.context.FacesContext abstract base class for representing all of the contextual information associated with processing an incoming request, and creating the corresponding response.
+b) A FacesContext instance is created by the JSF implementation, prior to beginning the request processing lifecycle, by a call to the getFacesContext method of FacesContextFactory, as described in Section 6.6 “FacesContextFactory”.
+c) A FacesContext instance is associated with a particular request at the beginning of request processing, by a call to the getFacesContext() method of the FacesContextFactory instance associated with the current web application
+d) all the above (d)
+
+9) How to redirect to page directly
+a) "home.jsp?redirect=true" 
+b) "home.jsp?faces-redirect:true"
+c) "home.jsp?faces-redirect=true"; (c)
+d) "home.jsp?faces-redirect-true"
+
+10) How to write an action tag 
+a) "#{edao.showEmploy()}" (a)
+b) "#(edao.showEmploy())"
+c) "#{edao(showEmploy())}"
+d) None 
+
+11) How to Create an object for adding message to faces-context
+a) context.addMessage(null, new FacesMessage("Unknown login"));
+b) FacesContext.getCurrentInstance().addMessage(clientId, facesMessage);
+c) FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_INFO, stringMessage, stringMessage);
+d) All the Above (d)
+
+12) Identify Correct Syntax for dropdown
+
+A) <h:selectOneMenu value="#{user.favCoffee1}">
+   	<f:selectItem itemValue="Cream Latte" itemLabel="Coffee3 - Cream Latte" />
+   	<f:selectItem itemValue="Extreme Mocha" itemLabel="Coffee3 - Extreme Mocha" />
+   	<f:selectItem itemValue="Buena Vista" itemLabel="Coffee3 - Buena Vista" />
+</h:selectOneMenu> (a)
+
+B) <h:selectMenu value="#{user.favCoffee1}">
+   	<f:selectItem itemValue="Cream Latte" itemLabel="Coffee3 - Cream Latte" />
+   	<f:selectItem itemValue="Extreme Mocha" itemLabel="Coffee3 - Extreme Mocha" />
+   	<f:selectItem itemValue="Buena Vista" itemLabel="Coffee3 - Buena Vista" />
+</h:selectMenu>
+
+C) <h:selectAnyMenu value="#{user.favCoffee1}">
+   	<f:selectItem itemValue="Cream Latte" itemLabel="Coffee3 - Cream Latte" />
+   	<f:selectItem itemValue="Extreme Mocha" itemLabel="Coffee3 - Extreme Mocha" />
+   	<f:selectItem itemValue="Buena Vista" itemLabel="Coffee3 - Buena Vista" />
+</h:selectAnyMenu>
+
+D) All the Above
+
+13) Identify correct syntax for Radio Button
+
+a) <h:selectRadio value="#{user.favColor1}">
+   	<f:selectItem itemValue="Red" itemLabel="Color1 - Red" />
+   	<f:selectItem itemValue="Green" itemLabel="Color1 - Green" />
+   	<f:selectItem itemValue="Blue" itemLabel="Color1 - Blue" />
+</h:selectRadio>
+
+b) <h:selectOneRadio value="#{user.favColor1}">
+   	<f:selectItem itemValue="Red" itemLabel="Color1 - Red" />
+   	<f:selectItem itemValue="Green" itemLabel="Color1 - Green" />
+   	<f:selectItem itemValue="Blue" itemLabel="Color1 - Blue" />
+</h:selectRadio>
+
+c) <h:selectOneRadio value="#{user.favColor1}">
+   	<f:selectItem itemValue="Red" itemLabel="Color1 - Red" />
+   	<f:selectItem itemValue="Green" itemLabel="Color1 - Green" />
+   	<f:selectItem itemValue="Blue" itemLabel="Color1 - Blue" />
+</h:selectOneRadio> (c)
+
+d) all
+
+14) Identify correct Syntax for TextField 
+
+a) <h:inputText id="username" value="#{user.name}" label="username" maxlength="10"            
+size="15" alt="username" autocomplete="off" readonly="false" required="true"              
+requiredMessage="Username is required" style="color:red" accesskey="q">  
+    </h:inputText>  
+
+b) <h:inputText id="username" value="#{user.name}" label="username" maxlength="10"            
+size="15" alt="username" autocomplete="off" readonly="false" required="true"              
+requiredMessage="Username is required" style="color:red" accesskey="q" />  
+
+c) <h:inputText id="username" value="#{user.name}" label="username" maxlength="10"            
+requiredMessage="Username is required" style="color:red" />  
+
+d) All (d)
+
+15) Identify Checkbox Syntax
+
+a) <h:selectManyCheckbox value="#{userData.data}">
+   <f:select itemValue="1" itemLabel="Item 1" />
+   <f:select itemValue="2" itemLabel="Item 2" />
+</h:selectManyCheckbox>
+
+b) <h:selectCheckbox value="#{userData.data}">
+   <f:selectItem itemValue="1" itemLabel="Item 1" />
+   <f:selectItem itemValue="2" itemLabel="Item 2" />
+</h:selectCheckbox>
+
+c) <h:selectManyCheckbox value="#{userData.data}">
+   <f:selectItem itemValue="1" itemLabel="Item 1" />
+   <f:selectItem itemValue="2" itemLabel="Item 2" />
+</h:selectManyCheckbox> (c)
+
+d) None
+
+16) What is correct syntax for managed-bean xml
+
+a) <managed-bean>
+	<managed-bean-name>calculation</managed-bean-name>
+   <managed-bean-class>com.java.jsf.Calculation</managed-bean-class>
+   <managed-bean-scope>request</managed-bean-scope>
+</managed-bean> (a)
+
+b) <managedbean>
+	<managed-bean-name>calculation</managed-bean-name>
+   <managed-bean-class>com.java.jsf.Calculation</managed-bean-class>
+   <managed-bean-scope>request</managed-bean-scope>
+</managedbean>
+
+c) <managed-bean>
+	<managed-bean-name>calculation</managed-bean-name>
+</managed-bean>
+
+d) None 
+
+17) What is the correct data-table syntax
+
+a) <h:dataTable value="#{product.productList}" var="p">  
+
+b) <h:dataTable value="#{product.jsp}" var="p">  
+
+c) <h:dataTable value="#{productList}" var="p">  
+
+d) All (d)
+
+18) Identify correct syntax for Message in JSF
+
+a)  <h:messages style="color:red;margin:8px;" />
+b) <h:message for="username" style="color:red" />
+c) <h:message for="form:username" style="color:red" />
+d) All (d)
+
+19) How to Enable JSF in web.xml
+
+a)  <context-param>
+    <param-name>javax.faces.CONFIG_FILES</param-name>
+    <param-value>/WEB-INF/faces-config.xml</param-value>
+  </context-param> (a)
+
+b)  <context-param>
+    <param-value>/WEB-INF/faces-config.xml</param-value>
+  </context-param>
+
+c)  <context-param>
+    <param-name>javax.faces.WEB_INF</param-name>
+    <param-value>/WEB-INF/faces-config.xml</param-value>
+  </context-param>
+
+d) None 
+
+20) JSF Stands For
+
+A) Java Server Faces (a)
+B) Java Script Foundation
+C) Java Standard Faces
+d) Java Serial Foundation
