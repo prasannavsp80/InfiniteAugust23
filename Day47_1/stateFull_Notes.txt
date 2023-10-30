@@ -1,0 +1,66 @@
+
+
+Stateless and stateful protocols are fundamentally different from each other. A stateless system sends a request to the server and relays the response (or the state) back without storing any information. On the other hand, stateful systems expect a response, track information, and resend the request if no response is received. 
+
+
+1. Saving information on servers 
+When comparing stateless and stateful protocols and the architecture on which they are built, the most glaring difference is how both protocols handle data. For the stateless protocol, storing data is not a priority. Therefore, the servers used as part of the network’s infrastructure do not have to be built to store large amounts of information. 
+
+In stateless protocols, data is not transient and does not have to be stored permanently on the servers. The bulk of the responsibility for saving information lies on the client, storing data as a cache. Also, restarting the server simply means starting a new operation with no significant data loss.
+
+On the other hand, stateful applications depend on a server capable of storing large amounts of information. It can be pretty complex to manage the entire life cycle of an application that uses the stateful protocol. The administrators must also ensure that the proper backing storage is used. The stateful protocol requires servers to save the information of an ongoing transaction as it can be referenced in future transactions. 
+
+2. Ease of implementation 
+When considering protocols used in the internet and the world of data exchange, some are easier to implement than others. The same also applies to the broad classes of stateful and stateless protocols. Stateless protocols require lesser logical reasoning, lesser storage, and lesser queries to determine the nature of the request. This means that stateless applications often require less computer processing power and are, therefore, easier to implement.
+
+Stateful protocols are different from stateless in this regard because a stateful application runs on more computer brain power and storage requirements than stateless. Stateful protocols are logically heavy and more challenging to implement than stateless. 
+
+3. Client-server dependency
+Computer applications generally require a two-way interface for data exchange. A phone, for example, does not browse the internet on its own except when connected to a server. It then sends requests to the server, and the server mediates this request. This principle holds for websites, applications, the cloud, databases, etc. 
+
+However, the degree of dependency between servers and client devices varies from one protocol to another. In stateless protocols, there is little dependency between the servers and clients. Requests sent are self-contained and put less burden on the server.
+
+However, stateful protocols retain a high level of interdependence between the server side and the clients. Requests sent to the server must be responded to before users can establish a connection. Failure of the client to get a response from a server means resending the request again. This shows how much dependency exists between clients and servers in stateful architecture. 
+
+4. Crash and system failure management
+Another difference between the stateful and stateless protocols is their response to partial or complete system failures. System failure from software or hardware components can lead to disastrous consequences when not handled properly. Even with proper handling, responding to system failure still depends on the application’s protocol. 
+
+In stateless protocols, servers are not responsible for storing information of a session, and information exchanged in a previous transaction has little bearing on current sessions. This means that a failed server can simply be restarted after a crash with little loss of information, as there is no particular state that the system must preserve.
+
+This contrasts sharply with the stateful protocol that stores information about previous and current sessions in a particular state. The server that is part of a stateful architecture must maintain the information of its status and details at every point. Therefore in the event of a crash, data is lost and cannot be replaced after the server is restarted, leading to data loss. 
+
+5. Server complexity 
+Previously, servers were made to handle the bulk of the processing requirements for connected devices. These devices were limited in hardware and software, letting the highly complex servers handle much of the processing and storage. Today, servers are made less complicated than they once were, which is positively fostered by the ultra-fast, high-capacity devices in use today. 
+
+In the same way, a stateless protocol relies less on its servers and, as such, does not require highly complex servers to function. The architecture of stateless protocol makes the server design very simple.
+
+On the other hand, stateful protocol architecture retains the method of leaving the bulk of the responsibility to the server while freeing up the client’s device. This means that servers in stateful protocol require a highly complex and heavy design.
+
+6. Ease of scalability 
+Scalability is an aspect of growth that must be considered when deciding what type of architecture to implement for any purpose. An application or website with increasing metric traffic may experience congestion and need to expand its current capacity. This usually involves adding additional services in container orchestration for cloud-based applications or servers. 
+
+In the stateless service architecture, scaling up or down is easy and can be done automatically for cloud-based apps using an auto-scaler tool. One can add back-end servers to a front-end load balancer, and any server can easily handle requests. 
+
+A stateful protocol has a different approach when it comes to scaling. To scale up in a stateful architecture, one must manually include additional stateful services and servers to the existing services. The same applies to scaling down a service. 
+
+7. Speed of transaction 
+Speed remains one of the top metrics considered whenever any function or service is deliberated upon in today’s world. Some applications are inherently faster than others, and while this may be multifactorial, the protocol binding the application also plays a role in the speed of transactions. 
+
+In stateless applications, the server does not retain information on a session. In addition, it can run multiple sessions simultaneously without consulting a storage platform for more information. This enables a stateful protocol to handle incoming requests and transactions at high speed. 
+
+Stateful routing, however, is set to make the server retain information on the transactions in sessions as long as the session lasts. This method of processing transactions gives higher control over what is being sent across and the information being passed. However, the number of transactions the server can carry out per second is reduced. This higher level of control over transactions is obtained from sacrificing the speed of day-to-day activities on the protocol. 
+
+See More: What Is Cloud Encryption? Definition, Importance, Methods, and Best Practices
+
+8. Multitasking capabilities
+Multitasking, in terms of computer technology, is the ability of a system to process multiple data inputs and produce information simultaneously. Multitasking is a result of a server being able to process multiple requests. In stateless protocol, there is no dependency on the server. Every request in itself is independent of prior transactions. This means that any resource available will be able to process the request since there is no need to access stored data.
+
+By comparison, the opposite is true for stateful application. Every transaction in a session must be carried out using the same stateful resource or server. The server initially engaged already has the data that will be used for subsequent transactions, so one can only use it until the entire session is over.
+
+9. Response mechanism
+How devices send and respond to requests in stateless and stateful protocols also differ. For instance, in the stateless architecture, a request is made by the client to the server. Once sent, the client does not bother to know if there has been a response on the receiving side. For instance, a mobile phone does not need confirmation to send an SMS. 
+
+Once it is sent, it does not expect a response. On the other hand, a stateful protocol requires an established connection of requests and responses for transactions to be completed. If a request is left unanswered, the request is sent again to the server. 
+
+10. Servers specifications
+In stateless architecture, the server specification can be flexible and accommodate various requests simultaneously. In the same way, a request can be processed by more than one server. This is because the information for processing the request is not tied to the server. In stateful architecture, one must use the same server to process a request already part of the transaction. This makes it different from the stateless protocol. 
