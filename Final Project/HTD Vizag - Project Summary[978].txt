@@ -1,0 +1,66 @@
+
+
+Health Care System
+
+0. Global Functionality
+	a. un-secured home page(s) with static content
+	b. Menu for Provider, Recipient, Admin, Insurance, and Pharmacy.
+
+1. Provider (Hosipital/Clinic/Nursing Home etc)  (13)
+	a. Provider Enrollment (Sign up)
+	b. Login (If logged in using auto generated one-time password, apprlication should redirect to reset password; no other action should be allowed.)
+	c. Provide Home Page with Menu options and summary
+	d. Create/upate availability for appointments (Standard schedule meaning recursive & Ad-hoc schedules)
+	e. View appointments, Confirm appointment after visit, Cancel appointments
+	f. Patient Medical history (Seach based on unique HID - Health ID of Recipient, or name of recipient, or enrolled phone number)
+	g. Write Procedure details (Prescription and recommendations)
+	h. View insurance details of Recipient
+	i. Create/update a claim for the procedure done
+	j. Search claims history (only for this Provider, based on date range, status, or HID or Claim ID)
+	j. Search and view Payment details
+	k. Reset password
+	l. Forgot password (request for new password)
+	
+2. Recipient (Member) (11)
+	a. Enrollment (Sign up) (Generate Unique Health ID)
+	b. Login (If logged in using auto generated one-time password, apprlication should redirect to reset password; no other action should be allowed.)
+	c. Recipient Home Page with Menu options and summary
+	d. View insurance details
+	e. Seach for Providers (based on name, speciality, location)
+	f. Make appointment & update/cancel appointment
+	g. View previous and upcoming appointment details
+	h. Previous Hisotry of Hospital visits and services
+	i. Search and view Claims related to self; and associated payment details - Self & Insurance
+	j. Reset password
+	k. Forgot password (request for new password)
+	
+3. Insurance (3)
+	a. Explore insurance plans (Summary and Details)
+	b. Subscribe or Enroll into an Insurance plan and renew insurance plan
+	c. Search Insurance plan (based on unique Policy ID or based on HID of Recipient; Additional check of DOB can be included)
+	
+4. Pharmacy (7)
+	a. Pharmacy Enrollment
+	b. Login (If logged in using auto generated one-time password, apprlication should redirect to reset password; no other action should be allowed.)
+	c. View and update stock
+	d. Entry of medicine (or medical equipment) sale with prescription detail
+	e. Search and view previous sale details (based on date range, Prescription ID, HID, Provider ID etc.)
+	f. Reset password
+	g. Forgot password (request for new password)
+
+5. Admin (Approving Provider; Recipient grievances; All Inquiries of data) (13)
+	a. Login Page
+	b. Provider review & approval
+	c. Provider Search & Inquiry
+	d. Pharmacy review & approval
+	e. Member Search & Inquiry
+	f. Update Provider details
+	g. Update Member details
+	g. Password reset (user chooses new password)
+	j. Forgot password (request for new password)
+	h. Create Insurance Plan
+	c. Search Claims (based on Policy ID, Provider ID, or HID of Recipient OR based on status OR based on a date range)
+	d. Process Claim (Approve or Deny with reasons)
+	e. Process Payment to Hospitals
+	
+	
